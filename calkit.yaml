@@ -6,6 +6,10 @@ git_repo_url: https://github.com/petebachant/strava-analysis
 dependencies:
   - STRAVA_CLIENT_ID:
       kind: env-var
+      notes: >
+        The STRAVA_CLIENT_ID and STRAVA_CLIENT_SECRET environmental
+        variables can be set after creating a Strava application at
+        https://www.strava.com/settings/api
   - STRAVA_CLIENT_SECRET:
       kind: env-var
   - uv
