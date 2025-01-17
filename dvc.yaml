@@ -44,4 +44,4 @@ stages:
         - .calkit/queues/agg/todo.txt
       outs:
         - data/timeseries
-        - .calkit/queues/agg/done.csv
+        - .calkit/queues/agg/done.txt
