@@ -21,3 +21,10 @@ environments:
 questions:
   - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?
+# We will process dynamic params before calling dvc repro so foreach stages
+# can iterate over these
+dynamic_params:
+  dates:
+    kind: periodic
+    freq: daily
+    start: 2020-01-01
