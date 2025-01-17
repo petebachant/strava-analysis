@@ -6,3 +6,4 @@ ipykernel
 xgboost
 ipython
 requests
+python-dotenv
