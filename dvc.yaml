@@ -10,25 +10,27 @@ stages:
           persist: true
     always_changed: true
   # Before the pipeline is executed, we will update dates in params.yaml to
-  # ensure all the correct dates up until today are there
+  # ensure this is rerun when we turn over to a new day
   get-data:
-    foreach: ${dates}
-    do:
-      cmd: calkit xenv -n main -- python scripts/get-data.py ${item}
-      deps:
-        - scripts/get-data.py
-        - requirements.txt
-      outs:
-        - data/raw/${item}
-  # Alternatively, we can update a single param and have the script be
-  # responsible for keeping track of the dates it has queried
-  get-data-2:
     cmd: calkit xenv -n main -- python scripts/get-data.py --end ${today}
     deps:
       - requirements.txt
       - scripts/get-data.py
+      - .calkit/queues/backfill/todo.txt # New activities we missed
     outs:
-      - data/raw
+      - data/activities.csv
+      - .calkit/queues/backfill/done.txt
+      - .calkit/queues/weather/todo.txt # Weather data we need to acquire
+      - .calkit/queues/agg/todo.txt # Activities we need to aggregate
+  get-weather-data:
+    cmd: calkit xenv -n main -- python scripts/get-weather-data.py
+    deps:
+      - requirements.txt
+      - scripts/get-weather-data.py
+      - .calkit/queues/weather/todo.txt
+    outs:
+      - data/weather
+      - .calkit/queues/weather/done.txt
   # TODO: Create large partitioned dataset from all streams to make it easy to
   # query
   # We will have to write out an index of dates we have processed to not
@@ -40,6 +42,7 @@ stages:
       deps:
         - requirements.txt
         - scripts/agg-data.py
-        - data/raw
+        - .calkit/queues/agg/todo.txt
       outs:
-        - data/processed
+        - data/timeseries
+        - .calkit/queues/agg/done.csv

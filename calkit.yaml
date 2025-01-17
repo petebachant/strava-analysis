@@ -28,3 +28,11 @@ dynamic_params:
     kind: periodic
     freq: daily
     start: 2020-01-01
+datasets:
+  - path: data/processed/activities.csv
+    title: Activities
+    description: An index of all activities.
+  - path: data/processed/timeseries
+    title: Time series
+    description: >
+      Time series data from all activities, Hive-partitioned by month.
