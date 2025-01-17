@@ -9,5 +9,5 @@ environments:
     kind: uv-venv
     prefix: .venv
 questions:
-  - Can we estimate a temperature-normalized power verus heart rate curve
+  - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?
