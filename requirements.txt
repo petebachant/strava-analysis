@@ -1,0 +1,8 @@
+stravalib
+pandas
+polars
+plotly
+ipykernel
+xgboost
+ipython
+requests

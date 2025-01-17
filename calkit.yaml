@@ -3,3 +3,8 @@ name: strava-analysis
 title: Strava analysis
 description: Collecting and analyzing data from Strava.
 git_repo_url: https://github.com/petebachant/strava-analysis
+environments:
+  main:
+    path: requirements.txt
+    kind: uv-venv
+    prefix: .venv
