@@ -9,17 +9,16 @@ stages:
           cache: false
           persist: true
     always_changed: true
-  # Before the pipeline is executed, we will update dates in params.yaml to
+  # Before the pipeline is executed, we will update `today` in params.yaml to
   # ensure this is rerun when we turn over to a new day
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py --end ${today}
     deps:
       - requirements.txt
       - scripts/get-data.py
-      - .calkit/queues/backfill/todo.txt # New activities we missed
     outs:
       - data/activities.csv
-      - .calkit/queues/backfill/done.txt
+      - data/raw-timeseries
       - .calkit/queues/weather/todo.txt # Weather data we need to acquire
       - .calkit/queues/agg/todo.txt # Activities we need to aggregate
   get-weather-data:
