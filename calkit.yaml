@@ -24,15 +24,13 @@ questions:
 # We will process dynamic params before calling dvc repro so foreach stages
 # can iterate over these
 dynamic_params:
-  dates:
-    kind: periodic
-    freq: daily
-    start: 2020-01-01
+  today:
+    kind: today
 datasets:
-  - path: data/processed/activities.csv
+  - path: data/activities.csv
     title: Activities
     description: An index of all activities.
-  - path: data/processed/timeseries
+  - path: data/timeseries
     title: Time series
     description: >
-      Time series data from all activities, Hive-partitioned by month.
+      Time series data from all activities, Hive-partitioned by year-month.

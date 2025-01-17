@@ -36,6 +36,9 @@ assert client.access_token is not None
 client.refresh_token = refresh_token
 client.token_expired_at = expires_at
 
+# TODO: Load activities table into memory and fetch only those newer than
+# the latest
+
 resp = client.get_activities(after="2025-01-01")  # TODO: Parameterize
 
 for activity in resp:
