@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  auth:
+    cmd: calkit xenv -n main python scripts/auth.py
+    deps:
+    - path: scripts/auth.py
+      hash: md5
+      md5: 7d7b817d8faaec25c7b767d995c17803
+      size: 2979
+    outs:
+    - path: .env
+      hash: md5
+      md5: faaef4f3a6c964d8be6d69d090002497
+      size: 247

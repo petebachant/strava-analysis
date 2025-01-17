@@ -1,0 +1,10 @@
+stages:
+  auth:
+    cmd: calkit xenv -n main python scripts/auth.py
+    deps:
+      - scripts/auth.py
+    outs:
+      - .env:
+          cache: false
+          persist: true
+    always_changed: true

@@ -4,9 +4,9 @@ title: Strava analysis
 description: Collecting and analyzing data from Strava.
 git_repo_url: https://github.com/petebachant/strava-analysis
 dependencies:
-  - STRAVA_TOKEN:
+  - STRAVA_CLIENT_ID:
       kind: env-var
-  - STRAVA_REFRESH_TOKEN:
+  - STRAVA_CLIENT_SECRET:
       kind: env-var
   - uv
 environments:
