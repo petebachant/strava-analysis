@@ -8,3 +8,6 @@ environments:
     path: requirements.txt
     kind: uv-venv
     prefix: .venv
+questions:
+  - Can we estimate a temperature-normalized power verus heart rate curve
+    to track changes in performance?
