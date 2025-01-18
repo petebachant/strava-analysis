@@ -1,6 +1,5 @@
 """Get data from the Strava API."""
 
-import glob
 import os
 
 import duckdb
