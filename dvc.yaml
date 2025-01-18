@@ -20,3 +20,4 @@ stages:
           persist: true
       - data/timeseries:
           persist: true
+    always_changed: true
