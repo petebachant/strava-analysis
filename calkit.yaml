@@ -23,6 +23,8 @@ questions:
     to track changes in performance?
 # We will process dynamic params before calling dvc repro so foreach stages
 # can iterate over these
+  - What do my weekly power and heart rate distributions look like?
+  - How can I increase my total energy expenditure?
 dynamic_params:
   dates:
     kind: date-range
