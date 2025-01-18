@@ -32,4 +32,5 @@ datasets:
     stage: collect-data
     title: Time series
     description: >
-      Time series data from all activities, Hive-partitioned by activity ID.
+      Time series data from all activities, Hive-partitioned by activity
+      ID.
