@@ -9,13 +9,17 @@ stages:
           cache: false
           persist: true
     always_changed: true
-  # Before the pipeline is executed, we will update `today` in params.yaml to
-  # ensure this is rerun when we turn over to a new day
+  # This script is smart enough to not do duplicate work, so consider it
+  # always changed
   get-data:
-    cmd: calkit xenv -n main -- python scripts/get-data.py --end ${today}
+    cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
       - requirements.txt
       - scripts/get-data.py
     outs:
-      - data/activities.csv
-      - data/timeseries
+      - data/activities.csv:
+          cache: false
+          persist: true
+      - data/timeseries:
+          persist: true
+    always_changed: true
