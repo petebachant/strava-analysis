@@ -5,8 +5,8 @@ stages:
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 86e8e5d4fb03f671398b92c80b6a71bc
-      size: 112
+      md5: 64fd542fec2d2e48c4aaaba29428d7e7
+      size: 145
     - path: scripts/auth.py
       hash: md5
       md5: 5c26ba7a7afa68c2b4f5425c7d929468
@@ -21,8 +21,8 @@ stages:
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 86e8e5d4fb03f671398b92c80b6a71bc
-      size: 112
+      md5: 64fd542fec2d2e48c4aaaba29428d7e7
+      size: 145
     - path: scripts/get-data.py
       hash: md5
       md5: f804c1f1081cadb1d77a85739fa6dd31
@@ -30,11 +30,11 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: bd753156564985bef7cd116c886baa1a.dir
-      size: 120687
-      nfiles: 53
+      md5: d77010c45cc50179651c347ffb90f26a.dir
+      size: 718466
+      nfiles: 310
     - path: data/timeseries
       hash: md5
-      md5: 26bf89682919f91b4efea0bd00fbe540.dir
-      size: 6157422
-      nfiles: 53
+      md5: 352715ea36d1c6dc4f99eab52cba1fdc.dir
+      size: 37911657
+      nfiles: 310

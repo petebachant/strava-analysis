@@ -1,6 +1,6 @@
 stravalib
 pandas
-polars
+polars[plot]
 plotly
 ipykernel
 xgboost
@@ -11,3 +11,5 @@ ruamel-yaml
 duckdb
 tqdm
 pyarrow
+matplotlib
+nbformat>=4.2.0
