@@ -21,8 +21,6 @@ environments:
 questions:
   - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?
-# We will process dynamic params before calling dvc repro so foreach stages
-# can iterate over these
   - What do my weekly power and heart rate distributions look like?
   - How can I increase my total energy expenditure?
 dynamic_params:
@@ -32,10 +30,10 @@ dynamic_params:
     start: 2014-01-01
     split: false
 datasets:
-  - path: data/activities.csv
+  - path: data/activities
     title: Activities
-    description: An index of all activities.
+    description: An index of all activities as raw JSON files.
   - path: data/timeseries
     title: Time series
     description: >
-      Time series data from all activities, Hive-partitioned by year-month.
+      Time series data from all activities, Hive-partitioned by activity ID.
