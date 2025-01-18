@@ -24,10 +24,11 @@ questions:
 # We will process dynamic params before calling dvc repro so foreach stages
 # can iterate over these
 dynamic_params:
-  months:
-    kind: periodic
-    interval: 1 month
+  dates:
+    kind: date-range
+    interval: 1d
     start: 2014-01-01
+    split: false
 datasets:
   - path: data/activities.csv
     title: Activities

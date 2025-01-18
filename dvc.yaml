@@ -9,17 +9,25 @@ stages:
           cache: false
           persist: true
     always_changed: true
-  # Months is a dynamic parameter, updated by Calkit before running the pipeline
-  get-data:
-    foreach: ${months}
+  get-activities:
+    foreach: ${dates}
     do:
       cmd: >
         calkit xenv -n main --
-        python scripts/get-data.py --year ${item.year} --month ${item.month}
+        python scripts/get-data.py --date ${item}
       deps:
         - requirements.txt
         - scripts/get-data.py
       outs:
-        - data/activities/year=${item.year}/month=${item.month}/data.csv:
+        - data/activities/${item}:
             cache: false
-        - data/timeseries/year=${item.year}/month=${item.month}
+  get-timeseries:
+    foreach: ${activity_ids}
+    do:
+      cmd: >
+        calkit xenv -n main --
+        python scripts/get-ts-data.py --activity-id ${item}
+      deps:
+        - scripts/get-ts-data.py
+      outs:
+        - data/timeseries/activity_id=${item}/data.parquet
