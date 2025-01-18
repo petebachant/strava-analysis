@@ -23,12 +23,6 @@ questions:
     to track changes in performance?
   - What do my weekly power and heart rate distributions look like?
   - How can I increase my total energy expenditure?
-dynamic_params:
-  dates:
-    kind: date-range
-    interval: 1d
-    start: 2014-01-01
-    split: false
 datasets:
   - path: data/activities
     title: Activities

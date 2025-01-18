@@ -1,8 +1,10 @@
 # Strava analysis
 
 Collecting and analyzing data from Strava.
+The pipeline is designed to be run approximately daily,
+and will continuously accumulate data from new Strava activities.
 
-## How it works
+## Setup
 
 If you look at the `dependencies` in `calkit.yaml` you'll see you need to
 define two environmental variables,
@@ -16,15 +18,3 @@ or you can call:
 calkit set-env-var STRAVA_CLIENT_ID ...
 calkit set-env-var STRAVA_CLIENT_SECRET ...
 ```
-
-## Pipeline
-
-Raw time series, or "stream" data is downloaded for every Strava
-activity,
-and these are aggregated and stored in a Hive-partitioned dataset
-using the parquet file format.
-
-In order to not duplicate work,
-activities that have already been processed are kept in an on-disk queue.
-
-This dataset is then used for further analysis.
