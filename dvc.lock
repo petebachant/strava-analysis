@@ -25,8 +25,8 @@ stages:
       size: 145
     - path: scripts/get-data.py
       hash: md5
-      md5: 097df7c270514a415777d44bf4ec6dae
-      size: 1998
+      md5: 8e8f44188d0b08ee2cd30bc9ea068560
+      size: 1256
     outs:
     - path: data/activities
       hash: md5
