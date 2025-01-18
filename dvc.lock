@@ -25,8 +25,8 @@ stages:
       size: 145
     - path: scripts/get-data.py
       hash: md5
-      md5: f804c1f1081cadb1d77a85739fa6dd31
-      size: 1244
+      md5: 097df7c270514a415777d44bf4ec6dae
+      size: 1998
     outs:
     - path: data/activities
       hash: md5
@@ -35,6 +35,6 @@ stages:
       nfiles: 369
     - path: data/timeseries
       hash: md5
-      md5: 0d4c6b5e5a221fe26866f50e817e5f44.dir
-      size: 45138980
-      nfiles: 369
+      md5: bc987cef29a4d10b5963df669276eddc.dir
+      size: 46672787
+      nfiles: 379
