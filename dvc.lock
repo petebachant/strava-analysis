@@ -30,11 +30,11 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 0fb3a9ad20206ebe3a9b1e3b149b5ea6.dir
-      size: 55950
-      nfiles: 24
+      md5: fe03d35d5a2cfadb1a40e6186ddca219.dir
+      size: 57428
+      nfiles: 25
     - path: data/timeseries
       hash: md5
-      md5: e1acc881ea44bbf3b1cbe5e9c316f3be.dir
-      size: 2510742
-      nfiles: 24
+      md5: 355b1a0b9f1ff52247a3cae42e8cd1ae.dir
+      size: 2530070
+      nfiles: 25
