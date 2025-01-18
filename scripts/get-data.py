@@ -16,11 +16,12 @@ os.makedirs(outdir_act, exist_ok=True)
 # Read the latest activity and set start date after that
 try:
     start_date = duckdb.sql(
-        "select max(start_date) from data/activities/*.json"
-    ).fetchall()[0]
+        "SELECT MAX(start_date) FROM 'data/activities/*.json'"
+    ).fetchone()[0]
 except Exception as e:
-    warnings.warn(f"Could not detect latest activity date: {e}")
+    print(f"Could not detect latest activity date: {e}")
 
+print(f"Starting from {start_date}")
 resp = client.get_activities(after=start_date)
 i = 0
 

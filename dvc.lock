@@ -5,8 +5,8 @@ stages:
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 2d353065b5afc9c5c5159e683bb29451
-      size: 104
+      md5: 86e8e5d4fb03f671398b92c80b6a71bc
+      size: 112
     - path: scripts/auth.py
       hash: md5
       md5: 5c26ba7a7afa68c2b4f5425c7d929468
