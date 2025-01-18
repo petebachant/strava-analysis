@@ -25,9 +25,11 @@ questions:
   - How can I increase my total energy expenditure?
 datasets:
   - path: data/activities
+    stage: collect-data
     title: Activities
     description: An index of all activities as raw JSON files.
   - path: data/timeseries
+    stage: collect-data
     title: Time series
     description: >
       Time series data from all activities, Hive-partitioned by activity ID.
