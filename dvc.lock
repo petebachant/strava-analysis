@@ -25,16 +25,16 @@ stages:
       size: 112
     - path: scripts/get-data.py
       hash: md5
-      md5: 840524079925f4f429ded61937286e32
-      size: 1260
+      md5: f804c1f1081cadb1d77a85739fa6dd31
+      size: 1244
     outs:
     - path: data/activities
       hash: md5
-      md5: 0be6ba906787e704f7342dfcfe3c216e.dir
-      size: 40054
-      nfiles: 17
+      md5: 0fb3a9ad20206ebe3a9b1e3b149b5ea6.dir
+      size: 55950
+      nfiles: 24
     - path: data/timeseries
       hash: md5
-      md5: d49fc94a079d292c5b2ac804f1f721be.dir
-      size: 1286939
-      nfiles: 17
+      md5: e1acc881ea44bbf3b1cbe5e9c316f3be.dir
+      size: 2510742
+      nfiles: 24
