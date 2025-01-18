@@ -1,7 +1,6 @@
 """Get data from the Strava API."""
 
 import os
-import warnings
 
 import duckdb
 import polars as pl

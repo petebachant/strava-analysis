@@ -17,24 +17,24 @@ stages:
       md5: 494439aeb504237205d52301f0df3c80
       size: 247
   get-data:
-    cmd: "calkit xenv -n main -- python scripts/get-data.py\n"
+    cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 3d5f55b529955a5117715e6eaa471e68
-      size: 92
+      md5: 86e8e5d4fb03f671398b92c80b6a71bc
+      size: 112
     - path: scripts/get-data.py
       hash: md5
-      md5: 7757f9e6200d0450af0b48c3aba8ffb4
-      size: 986
+      md5: 840524079925f4f429ded61937286e32
+      size: 1260
     outs:
     - path: data/activities
       hash: md5
-      md5: 00340891f07e25fb6fc2643e0342eb24.dir
-      size: 22830
-      nfiles: 10
+      md5: 0be6ba906787e704f7342dfcfe3c216e.dir
+      size: 40054
+      nfiles: 17
     - path: data/timeseries
       hash: md5
-      md5: f14875195129081db12296afaeb4815d.dir
-      size: 534044
-      nfiles: 10
+      md5: d49fc94a079d292c5b2ac804f1f721be.dir
+      size: 1286939
+      nfiles: 17
