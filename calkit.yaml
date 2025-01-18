@@ -23,6 +23,8 @@ questions:
     to track changes in performance?
   - What do my weekly power and heart rate distributions look like?
   - How can I increase my total energy expenditure?
+  - What weekly power distribution should I strive for in order to maximize
+    performance?
 datasets:
   - path: data/activities
     stage: collect-data
