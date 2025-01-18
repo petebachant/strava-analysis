@@ -34,3 +34,21 @@ datasets:
     description: >
       Time series data from all activities, Hive-partitioned by activity
       ID.
+# Group figures so we can easily flip through them
+figure_groups:
+  # Paths will be found by globbing params
+  # Get individual figure from API with
+  # GET /.../figure-groups/weekly_dists?week_starting=2024-01-01
+  # Get figure groups and their details with
+  # GET /.../figure-groups
+  # This will return the object and param lists so we can iterate through them
+  # Should probably also return the first figure
+  weekly_dists:
+    path: figures/weekly-dists/{week_starting}.json
+    params:
+      week_starting:
+        name: Week starting
+        type: date
+        sort: desc
+    title: Weekly power and heart rate distributions
+    stage: plot-weekly-dists
