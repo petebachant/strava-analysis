@@ -43,14 +43,14 @@ if (
     dotenv.set_key(".env", "STRAVA_TOKEN", access_token)
     dotenv.set_key(".env", "STRAVA_REFRESH_TOKEN", refresh_token)
     dotenv.set_key(".env", "STRAVA_TOKEN_EXPIRES_AT", str(expires_at))
-    print("Refreshed token; exiting")
+    print("Refreshed token")
     sys.exit(0)
 elif (
     token is not None
     and expires_at is not None
     and time.time() < float(expires_at)
 ):
-    print("Token is still valid; exiting")
+    print("Token is still valid")
     sys.exit(0)
 
 

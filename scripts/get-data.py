@@ -1,50 +1,42 @@
 """Get data from the Strava API."""
 
 import os
-import time
+import warnings
 
-import dotenv
+import duckdb
+import polars as pl
 from stravalib import Client
 
-dotenv.load_dotenv(".env")
+client = Client(access_token=os.getenv("STRAVA_TOKEN"))
+start_date = "2024-01-01"
 
-client = Client()
+outdir_act = "data/activities"
+os.makedirs(outdir_act, exist_ok=True)
 
-client_id = os.getenv("STRAVA_CLIENT_ID")
-client_secret = os.getenv("STRAVA_CLIENT_SECRET")
-access_token = os.getenv("STRAVA_TOKEN")
-refresh_token = os.getenv("STRAVA_REFRESH_TOKEN")
-expires_at = os.getenv("STRAVA_TOKEN_EXPIRES_AT")
+# Read the latest activity and set start date after that
+try:
+    start_date = duckdb.sql(
+        "select max(start_date) from data/activities/*.json"
+    ).fetchall()[0]
+except Exception as e:
+    warnings.warn(f"Could not detect latest activity date: {e}")
 
-# If we have an expired token and a refresh token, refresh and exit
-if time.time() > float(expires_at):
-    refresh_response = client.refresh_access_token(
-        client_id=client_id,
-        client_secret=client_secret,
-        refresh_token=refresh_token,
-    )
-    access_token = refresh_response["access_token"]
-    refresh_token = refresh_response["refresh_token"]
-    expires_at = refresh_response["expires_at"]
-    dotenv.set_key(".env", "STRAVA_TOKEN", access_token)
-    dotenv.set_key(".env", "STRAVA_REFRESH_TOKEN", refresh_token)
-    dotenv.set_key(".env", "STRAVA_TOKEN_EXPIRES_AT", str(expires_at))
-    print("Refreshed token")
-
-client.access_token = access_token
-assert client.access_token is not None
-client.refresh_token = refresh_token
-client.token_expired_at = expires_at
-
-# TODO: Load activities table into memory and fetch only those newer than
-# the latest
-
-resp = client.get_activities(after="2025-01-01")  # TODO: Parameterize
+resp = client.get_activities(after=start_date)
+i = 0
 
 for activity in resp:
+    i += 1
+    print(f"[{i}] Working on activity ID: {activity.id}")
+    # Write the time series data first
     streams = client.get_activity_streams(activity_id=activity.id)
     data = {}
     for varname, stream in streams.items():
-        data[varname] = streams.data
-
-# TODO: Write out raw data somewhere
+        data[varname] = stream.data
+    fpath = f"data/timeseries/activity_id={activity.id}/data.parquet"
+    os.makedirs(os.path.dirname(fpath), exist_ok=True)
+    df = pl.DataFrame(data)
+    df.write_parquet(fpath)
+    # Now write the activity as JSON
+    fpath = f"{outdir_act}/{activity.id}.json"
+    with open(fpath, "w") as f:
+        f.write(activity.model_dump_json())

@@ -1,14 +1,40 @@
 schema: '2.0'
 stages:
   auth:
-    cmd: calkit xenv -n main python scripts/auth.py
+    cmd: calkit xenv -n main -- python scripts/auth.py
     deps:
+    - path: requirements.txt
+      hash: md5
+      md5: 2d353065b5afc9c5c5159e683bb29451
+      size: 104
     - path: scripts/auth.py
       hash: md5
-      md5: 7d7b817d8faaec25c7b767d995c17803
-      size: 2979
+      md5: 5c26ba7a7afa68c2b4f5425c7d929468
+      size: 2961
     outs:
     - path: .env
       hash: md5
-      md5: faaef4f3a6c964d8be6d69d090002497
+      md5: 494439aeb504237205d52301f0df3c80
       size: 247
+  get-data:
+    cmd: "calkit xenv -n main -- python scripts/get-data.py\n"
+    deps:
+    - path: requirements.txt
+      hash: md5
+      md5: 3d5f55b529955a5117715e6eaa471e68
+      size: 92
+    - path: scripts/get-data.py
+      hash: md5
+      md5: 7757f9e6200d0450af0b48c3aba8ffb4
+      size: 986
+    outs:
+    - path: data/activities
+      hash: md5
+      md5: 00340891f07e25fb6fc2643e0342eb24.dir
+      size: 22830
+      nfiles: 10
+    - path: data/timeseries
+      hash: md5
+      md5: f14875195129081db12296afaeb4815d.dir
+      size: 534044
+      nfiles: 10

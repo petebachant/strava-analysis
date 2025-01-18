@@ -7,3 +7,7 @@ xgboost
 ipython
 requests
 python-dotenv
+ruamel-yaml
+duckdb
+tqdm
+pyarrow
