@@ -1,6 +1,5 @@
 """Get data from the Strava API."""
 
-import glob
 import os
 
 import duckdb
@@ -41,31 +40,3 @@ for activity in resp:
     fpath = f"{outdir_act}/{activity.id}.json"
     with open(fpath, "w") as f:
         f.write(activity.model_dump_json())
-
-# Backfill any activities that don't have time series data
-# This may have been caused by an erroneous DVC checkout operation
-activity_ids = [
-    os.path.basename(p).removesuffix(".json")
-    for p in glob.glob("data/activities/*.json")
-]
-for act_id in activity_ids:
-    fpath = f"data/timeseries/activity_id={act_id}/data.parquet"
-    if not os.path.isfile(fpath):
-        print(f"Fetching missing time series data from activity ID: {act_id}")
-        streams = client.get_activity_streams(activity_id=act_id)
-        data = {}
-        for varname, stream in streams.items():
-            data[varname] = stream.data
-        os.makedirs(os.path.dirname(fpath), exist_ok=True)
-        df = pl.DataFrame(data)
-        df.write_parquet(fpath)
-
-# Backfill any activities that have timeseries by no activity data
-activity_ids = [p.split("=")[-1] for p in glob.glob("data/timeseries/*")]
-for act_id in activity_ids:
-    fpath = f"data/activities/{act_id}.json"
-    if not os.path.isfile(fpath):
-        print(f"Fetching missing activity data from activity ID: {act_id}")
-        act = client.get_activity(activity_id=act_id)
-        with open(fpath, "w") as f:
-            f.write(act.model_dump_json())
