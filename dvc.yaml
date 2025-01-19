@@ -21,31 +21,13 @@ stages:
       - data/timeseries:
           persist: true
     always_changed: true
-  plot-current-week-dist:
-    desc: Plot the current week's power and heart rate distributions.
-    cmd: >
-      calkit xenv -n main --
-      python scripts/plot-dists.py --this-week
+  plot-weekly-dists:
+    desc: Plot weekly power and heart rate distributions.
+    cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
       - data/timeseries
       - data/activities
-      - scripts/plot-dists.py
-    outs:
-      - figures/dists-this-week.json
-    meta:
-      calkit:
-        type: figure
-        title: This week's distributions
-        description: Power and heart rate distributions from the current week.
-  invalidate-weekly-dists:
-    cmd: calkit queue --name weekly-dist-plots resubmit --all
-    deps:
-      - scripts/plot-dists.py
-  plot-weekly-dists:
-    desc: Plot weekly power and heart rate distributions.
-    cmd: calkit queue consume weekly-dist-plots
-    deps:
-      - .calkit/queues/weekly-dist-plots.yaml
+      - scripts/plot-weekly-dists.py
     outs:
       - figures/weekly-dists:
-          persist: true
+          cache: false

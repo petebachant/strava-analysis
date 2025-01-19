@@ -62,6 +62,8 @@ dfg_hr = (
     .rename(dict(ts="week_start", len="seconds"))
 )
 
+latest_week = dfg_power["week_start"].max()
+
 for week_start in tqdm(dfg_power["week_start"].unique()):
     df1_p = dfg_power.filter(pl.col("week_start") == week_start)
     df1_hr = dfg_hr.filter(pl.col("week_start") == week_start)
@@ -83,5 +85,8 @@ for week_start in tqdm(dfg_power["week_start"].unique()):
     fig.update_yaxes(title_text="Hours", row=1, col=1)
     fig.update_yaxes(title_text=None, row=1, col=2)
     fig.update_layout(showlegend=False, margin=dict(t=40))
-    outpath = f"{fig_dir}/{week_start.date()}.json"
+    if week_start == latest_week:
+        outpath = f"{fig_dir}/latest-week.json"
+    else:
+        outpath = f"{fig_dir}/{week_start.date()}.json"
     fig.write_json(outpath)

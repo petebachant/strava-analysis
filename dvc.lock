@@ -14,7 +14,7 @@ stages:
     outs:
     - path: .env
       hash: md5
-      md5: 494439aeb504237205d52301f0df3c80
+      md5: 7a6ed0376aa081d934b5fddc0a5513f2
       size: 247
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
@@ -30,11 +30,34 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 38a0c33d17f4dfc853cd963c8421e3e2.dir
-      size: 855075
-      nfiles: 369
+      md5: df37b2542076b3a65458af742ca0ef4f.dir
+      size: 857646
+      nfiles: 370
     - path: data/timeseries
       hash: md5
-      md5: bc987cef29a4d10b5963df669276eddc.dir
-      size: 46672787
-      nfiles: 379
+      md5: 491a807290f3d2b637dff1c6a1f25e37.dir
+      size: 46909572
+      nfiles: 380
+  plot-weekly-dists:
+    cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
+    deps:
+    - path: data/activities
+      hash: md5
+      md5: df37b2542076b3a65458af742ca0ef4f.dir
+      size: 857646
+      nfiles: 370
+    - path: data/timeseries
+      hash: md5
+      md5: 491a807290f3d2b637dff1c6a1f25e37.dir
+      size: 46909572
+      nfiles: 380
+    - path: scripts/plot-weekly-dists.py
+      hash: md5
+      md5: 1d5a0be2fb66b4ec3cb9b679ea4e865b
+      size: 2562
+    outs:
+    - path: figures/weekly-dists
+      hash: md5
+      md5: 353d94e5265a7a39e1f0d1230f04939f.dir
+      size: 414643
+      nfiles: 54
