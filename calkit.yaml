@@ -25,6 +25,9 @@ questions:
   - How can I increase my total energy expenditure?
   - What weekly power distribution should I strive for in order to maximize
     performance?
+  - What weekly power distribution should I strive for in order to maximize
+    energy expenditure, assuming maximum energy expenditure correlates with
+    higher performance?
 datasets:
   - path: data/activities
     stage: collect-data
