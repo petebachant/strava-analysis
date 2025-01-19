@@ -59,3 +59,13 @@ for act_id in activity_ids:
         os.makedirs(os.path.dirname(fpath), exist_ok=True)
         df = pl.DataFrame(data)
         df.write_parquet(fpath)
+
+# Backfill any activities that have timeseries by no activity data
+activity_ids = [p.split("=")[-1] for p in glob.glob("data/timeseries/*")]
+for act_id in activity_ids:
+    fpath = f"data/activities/{act_id}.json"
+    if not os.path.isfile(fpath):
+        print(f"Fetching missing activity data from activity ID: {act_id}")
+        act = client.get_activity(activity_id=act_id)
+        with open(fpath, "w") as f:
+            f.write(act.model_dump_json())
