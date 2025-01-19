@@ -63,3 +63,5 @@ figure_groups:
         sort: desc
     title: Weekly power and heart rate distributions
     stage: plot-weekly-dists
+references:
+  - path: references.bib
