@@ -170,5 +170,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-scratch.ipynb
+scratch*.ipynb
 *.DS_Store

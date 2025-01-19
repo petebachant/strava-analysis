@@ -65,3 +65,8 @@ figure_groups:
     stage: plot-weekly-dists
 references:
   - path: references.bib
+notebooks:
+  - path: notebooks/main.ipynb
+    name: main
+    title: Analysis dev template
+    template: true # By default, the first cell of a template notebook is dropped?
