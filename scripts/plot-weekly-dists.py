@@ -69,12 +69,12 @@ for week_start in tqdm(dfg_power["week_start"].unique()):
     df1_hr = dfg_hr.filter(pl.col("week_start") == week_start)
     fig = make_subplots(rows=1, cols=2)
     fig.add_trace(
-        go.Bar(x=df1_p["power_zone"], y=df1_p["hours"]),
+        go.Bar(x=df1_p["power_zone"], y=df1_p["hours"], name="Power"),
         row=1,
         col=1,
     )
     fig.add_trace(
-        go.Bar(x=df1_hr["hr_zone"], y=df1_hr["hours"]),
+        go.Bar(x=df1_hr["hr_zone"], y=df1_hr["hours"], name="HR"),
         row=1,
         col=2,
     )
