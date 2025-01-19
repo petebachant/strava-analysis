@@ -14,6 +14,7 @@ from urllib.parse import parse_qs, urlparse
 
 import dotenv
 from stravalib.client import Client
+from stravalib.exc import AccessUnauthorized
 
 dotenv.load_dotenv()
 
@@ -44,7 +45,17 @@ if (
     dotenv.set_key(".env", "STRAVA_REFRESH_TOKEN", refresh_token)
     dotenv.set_key(".env", "STRAVA_TOKEN_EXPIRES_AT", str(expires_at))
     print("Refreshed token")
-    sys.exit(0)
+    # Check that we can get activities or if we raise AccessUnauthorized
+    client.access_token = access_token
+    client.refresh_token = refresh_token
+    client.token_expires_at = expires_at
+    try:
+        resp = client.get_activities(limit=1)
+        for act in resp:
+            print("Fetched activity ID", act.id)
+        sys.exit(0)
+    except AccessUnauthorized:
+        print("Token is invalid; reauthorizing")
 elif (
     token is not None
     and expires_at is not None

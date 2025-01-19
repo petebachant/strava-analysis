@@ -31,3 +31,14 @@ stages:
     outs:
       - figures/weekly-dists:
           cache: false
+  plot-weekly-energy:
+    cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
+    deps:
+      - data/activities
+    outs:
+      - figures/weekly-energy.json:
+          cache: false
+    meta:
+      calkit:
+        type: figure
+        title: Weekly energy expenditure

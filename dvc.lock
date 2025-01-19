@@ -9,12 +9,12 @@ stages:
       size: 145
     - path: scripts/auth.py
       hash: md5
-      md5: 5c26ba7a7afa68c2b4f5425c7d929468
-      size: 2961
+      md5: c60af3e7c9ba2c0984c9ee597ad1a0b6
+      size: 3413
     outs:
     - path: .env
       hash: md5
-      md5: 7a6ed0376aa081d934b5fddc0a5513f2
+      md5: e053ead1e0da6c0cefe5b35f2f6a69a1
       size: 247
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
@@ -25,8 +25,8 @@ stages:
       size: 145
     - path: scripts/get-data.py
       hash: md5
-      md5: f804c1f1081cadb1d77a85739fa6dd31
-      size: 1244
+      md5: 920a006de47719df0c13c8f1d9ce2142
+      size: 1286
     outs:
     - path: data/activities
       hash: md5
@@ -61,3 +61,16 @@ stages:
       md5: 3f0092288f78cab48057e434fb815b8a.dir
       size: 423892
       nfiles: 55
+  plot-weekly-energy:
+    cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
+    deps:
+    - path: data/activities
+      hash: md5
+      md5: df37b2542076b3a65458af742ca0ef4f.dir
+      size: 857646
+      nfiles: 370
+    outs:
+    - path: figures/weekly-energy.json
+      hash: md5
+      md5: d121cabdb09320b512c7d42b16dbf538
+      size: 9291

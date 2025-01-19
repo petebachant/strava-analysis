@@ -43,7 +43,9 @@ figures:
   - path: figures/weekly-dists/latest.json
     title: Power and heart rate distributions for latest week
     stage: plot-weekly-dists
-# Group figures so we can easily flip through them
+  - path: figures/weekly-energy.json
+    title: Weekly energy expenditure
+    stage: plot-weekly-energy
 figure_groups:
   # Paths will be found by globbing params
   # Get individual figure from API with
