@@ -54,9 +54,3 @@ figure_groups:
         sort: desc
     title: Weekly power and heart rate distributions
     stage: plot-weekly-dists
-queues:
-  weekly-dist-plots:
-    cmd: calkit xenv -n main python scripts/plot-weekly-dist.py --week {week}
-    params: # Task ID keys are just params joined together
-      - week
-    description: Plot weekly distributions of power and heart rate.
