@@ -26,9 +26,7 @@ df = duckdb.sql(
             select * from 'data/activities/*.json'
         ) activities
         on activities.id = timeseries.activity_id
-        where sport_type = 'Ride'
         and watts is not null
-        -- and ts > '2024-06-01'
         order by ts asc
     """,
 ).pl()
@@ -39,7 +37,8 @@ df = df.with_columns(
 )
 
 dfg_power = (
-    df.group_by_dynamic(
+    df.drop_nulls(subset=["ts", "power_zone"])
+    .group_by_dynamic(
         index_column="ts",
         every="1w",
         group_by="power_zone",
@@ -51,7 +50,8 @@ dfg_power = (
 )
 
 dfg_hr = (
-    df.group_by_dynamic(
+    df.drop_nulls(subset=["ts", "hr_zone"])
+    .group_by_dynamic(
         index_column="ts",
         every="1w",
         group_by="hr_zone",
