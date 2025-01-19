@@ -70,3 +70,6 @@ notebooks:
     name: main
     title: Analysis dev template
     template: true # By default, the first cell of a template notebook is dropped?
+showcase:
+  - figure: figures/weekly-energy-and-dists.json
+  - text: In the figure above, we can see...
