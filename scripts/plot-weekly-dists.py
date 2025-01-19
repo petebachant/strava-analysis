@@ -86,7 +86,7 @@ for week_start in tqdm(dfg_power["week_start"].unique()):
     fig.update_yaxes(title_text=None, row=1, col=2)
     fig.update_layout(showlegend=False, margin=dict(t=40))
     if week_start == latest_week:
-        outpath = f"{fig_dir}/latest-week.json"
+        outpath = f"{fig_dir}/latest.json"
     else:
         outpath = f"{fig_dir}/{week_start.date()}.json"
     fig.write_json(outpath)

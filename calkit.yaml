@@ -36,6 +36,10 @@ datasets:
     description: >
       Time series data from all activities, Hive-partitioned by activity
       ID.
+figures:
+  - path: figures/weekly-dists/latest.json
+    title: Power and heart rate distributions for latest week
+    stage: plot-weekly-dists
 # Group figures so we can easily flip through them
 figure_groups:
   # Paths will be found by globbing params

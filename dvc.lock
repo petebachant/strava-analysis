@@ -53,11 +53,11 @@ stages:
       nfiles: 380
     - path: scripts/plot-weekly-dists.py
       hash: md5
-      md5: 1d5a0be2fb66b4ec3cb9b679ea4e865b
-      size: 2562
+      md5: 907540b2c82c187fcd0822e04ea6970c
+      size: 2557
     outs:
     - path: figures/weekly-dists
       hash: md5
-      md5: 353d94e5265a7a39e1f0d1230f04939f.dir
+      md5: 1407bf898075f3f0d9b80955f84d0b28.dir
       size: 414643
       nfiles: 54
