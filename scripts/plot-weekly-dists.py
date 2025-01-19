@@ -9,7 +9,16 @@ from plotly.subplots import make_subplots
 from tqdm import tqdm
 
 power_bins = [-1, 138, 188, 225, 263, 300, 375, 1000]
-hr_bins = [0, 106, 140, 157, 174, 210]
+thresh_hr = 157
+hr_bins = [
+    0,
+    int(0.8 * thresh_hr),
+    int(0.9 * thresh_hr),
+    int(0.95 * thresh_hr),
+    int(1.02 * thresh_hr),
+    int(1.06 * thresh_hr),
+    220,
+]
 
 fig_dir = "figures/weekly-dists"
 os.makedirs(fig_dir, exist_ok=True)
