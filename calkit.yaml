@@ -15,9 +15,8 @@ dependencies:
   - uv
 environments:
   main:
-    path: requirements.txt
-    kind: uv-venv
-    prefix: .venv
+    path: pyproject.toml
+    kind: uv
 questions:
   - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?

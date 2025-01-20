@@ -2,7 +2,6 @@ stages:
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
-      - requirements.txt
       - scripts/get-data.py
       - pypkg/strava.py
     outs:

@@ -23,10 +23,6 @@ stages:
       hash: md5
       md5: 72a49e2a1cdd4d0a04bce69e0fe069ff
       size: 3929
-    - path: requirements.txt
-      hash: md5
-      md5: 16e3d5a0ff701f60c20393ade2861d98
-      size: 164
     - path: scripts/get-data.py
       hash: md5
       md5: de7fa36d844ca96ff57d7fcf01f29376
