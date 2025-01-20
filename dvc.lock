@@ -5,8 +5,8 @@ stages:
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 64fd542fec2d2e48c4aaaba29428d7e7
-      size: 145
+      md5: c1f33984da088b11d3eac455987033cd
+      size: 159
     - path: scripts/auth.py
       hash: md5
       md5: c60af3e7c9ba2c0984c9ee597ad1a0b6
@@ -14,15 +14,15 @@ stages:
     outs:
     - path: .env
       hash: md5
-      md5: 480539ee8678391583277a06fd14ddaa
+      md5: 94a89a53666f71757859a2863caf7ff9
       size: 247
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
     - path: requirements.txt
       hash: md5
-      md5: 64fd542fec2d2e48c4aaaba29428d7e7
-      size: 145
+      md5: c1f33984da088b11d3eac455987033cd
+      size: 159
     - path: scripts/get-data.py
       hash: md5
       md5: f804c1f1081cadb1d77a85739fa6dd31
@@ -53,12 +53,12 @@ stages:
       nfiles: 371
     - path: scripts/plot-weekly-dists.py
       hash: md5
-      md5: c775cd41555a4d658bfa2e17c3a16f7e
-      size: 2602
+      md5: 4119acc961fab7178ad9b4896bef5cf3
+      size: 2804
     outs:
     - path: figures/weekly-dists
       hash: md5
-      md5: aad66b6056efe276fc59332bb0122d4a.dir
+      md5: 4c62dba39f1b7481edd5474d8b68d450.dir
       size: 423877
       nfiles: 55
   plot-weekly-energy:

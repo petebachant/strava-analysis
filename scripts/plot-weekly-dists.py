@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import polars as pl
 from plotly.subplots import make_subplots
 from tqdm import tqdm
+import calkit
 
 power_bins = [-1, 138, 188, 225, 263, 300, 375, 1000]
 hr_bins = [0, 106, 140, 157, 174, 210]
@@ -85,8 +86,11 @@ for week_start in tqdm(dfg_power["week_start"].unique()):
     fig.update_yaxes(title_text="Hours", row=1, col=1)
     fig.update_yaxes(title_text=None, row=1, col=2)
     fig.update_layout(showlegend=False, margin=dict(t=40))
-    if week_start == latest_week:
-        outpath = f"{fig_dir}/latest.json"
-    else:
-        outpath = f"{fig_dir}/{week_start.date()}.json"
+    outpath = f"{fig_dir}/{week_start.date()}.json"
     fig.write_json(outpath)
+    if week_start == latest_week:
+        # Update the first figure in calkit.yaml to have this path
+        ck_info = calkit.load_calkit_info()
+        ck_info["figures"][0]["path"] = outpath
+        with open("calkit.yaml", "w") as f:
+            calkit.ryaml.dump(ck_info, f)
