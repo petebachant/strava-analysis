@@ -75,10 +75,9 @@ notebooks:
     template: true # By default, the first cell of a template notebook is dropped?
 showcase:
   - figure: figures/dists-latest-week.json
-    height: 300px
   - figure: figures/weekly-dists-24-weeks.json
   - text: >
-      The top figure above shows power and heart rate distributions from the
-      latest week of data. The figure below that shows these weekly
+      The top figure above shows power and heart rate distributions from
+      the latest week of data. The figure below that shows these weekly
       distributions over the past 24 months, along with the total weekly
       energy expenditure.

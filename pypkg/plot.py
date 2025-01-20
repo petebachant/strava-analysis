@@ -190,7 +190,7 @@ def plot_latest_week_dists(save=True) -> go.Figure:
     # Update y-axis titles
     fig.update_yaxes(title_text="Hours", row=1, col=1)
     fig.update_yaxes(title_text=None, row=1, col=2)
-    fig.update_layout(showlegend=False, margin=dict(t=40))
+    fig.update_layout(showlegend=False, margin=dict(t=40), height=300)
     if save:
         outpath = f"{FIGS_DIR}/dists-latest-week.json"
         check_figs_dir()
