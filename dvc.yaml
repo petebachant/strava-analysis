@@ -28,17 +28,17 @@ stages:
       - data/timeseries
       - data/activities
       - scripts/plot-weekly-dists.py
+      - pypkg/plot.py
     outs:
-      - figures/weekly-dists:
+      - figures/weekly-dists-24-weeks.json:
+          cache: false
+      - figures/dists-latest-week.json:
           cache: false
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
       - data/activities
+      - scripts/plot-weekly-energy.py
     outs:
       - figures/weekly-energy.json:
           cache: false
-    meta:
-      calkit:
-        type: figure
-        title: Weekly energy expenditure

@@ -14,3 +14,4 @@ pyarrow
 matplotlib
 nbformat>=4.2.0
 calkit-python
+-e .
