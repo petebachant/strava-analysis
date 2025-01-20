@@ -19,14 +19,18 @@ stages:
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
+    - path: pypkg/strava.py
+      hash: md5
+      md5: 72a49e2a1cdd4d0a04bce69e0fe069ff
+      size: 3929
     - path: requirements.txt
       hash: md5
       md5: 16e3d5a0ff701f60c20393ade2861d98
       size: 164
     - path: scripts/get-data.py
       hash: md5
-      md5: f804c1f1081cadb1d77a85739fa6dd31
-      size: 1244
+      md5: de7fa36d844ca96ff57d7fcf01f29376
+      size: 1218
     outs:
     - path: data/activities
       hash: md5

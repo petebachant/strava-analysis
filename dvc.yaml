@@ -1,19 +1,10 @@
 stages:
-  auth:
-    cmd: calkit xenv -n main -- python scripts/auth.py
-    deps:
-      - scripts/auth.py
-      - requirements.txt
-    outs:
-      - .env:
-          cache: false
-          persist: true
-    always_changed: true
   get-data:
     cmd: calkit xenv -n main -- python scripts/get-data.py
     deps:
       - requirements.txt
       - scripts/get-data.py
+      - pypkg/strava.py
     outs:
       - data/activities:
           cache: false

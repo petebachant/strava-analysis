@@ -4,9 +4,10 @@ import os
 
 import duckdb
 import polars as pl
-from stravalib import Client
 
-client = Client(access_token=os.getenv("STRAVA_TOKEN"))
+from pypkg.strava import get_client
+
+client = get_client()
 start_date = "2024-01-01"
 
 outdir_act = "data/activities"
