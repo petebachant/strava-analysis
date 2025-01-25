@@ -31,7 +31,7 @@ def get_client() -> Client:
     client.refresh_token = refresh_token
     client.token_expires_at = expires_at
     # If we have an expired token and a refresh token, refresh and exit
-    if (
+    if (token is None and refresh_token is not None) or (
         expires_at is not None
         and refresh_token is not None
         and time.time() > float(expires_at)

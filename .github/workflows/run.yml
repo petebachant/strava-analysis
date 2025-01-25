@@ -27,6 +27,10 @@ jobs:
           CALKIT_DVC_TOKEN: ${{ secrets.CALKIT_DVC_TOKEN }}
       - run: dvc pull
       - run: calkit run
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
       - run: calkit save -am "Run pipeline"
         env:
           CALKIT_DVC_TOKEN: ${{ secrets.CALKIT_DVC_TOKEN }}
