@@ -1,0 +1,38 @@
+name: Run pipeline
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  main:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install calkit-python uv
+      - name: Restore DVC cache
+        id: cache-dvc-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: .dvc/cache
+          key: ${{ runner.os }}-dvc-cache
+      - run: calkit config remote-auth
+        env:
+          CALKIT_DVC_TOKEN: ${{ secrets.CALKIT_DVC_TOKEN }}
+      - run: dvc pull
+      - run: calkit run
+      - run: calkit save -am "Run pipeline"
+        env:
+          CALKIT_DVC_TOKEN: ${{ secrets.CALKIT_DVC_TOKEN }}
+      - name: Save DVC cache
+        id: cache-dvc-save
+        uses: actions/cache/save@v4
+        with:
+          path: .dvc/cache
+          key: ${{ steps.cache-dvc-restore.outputs.cache-primary-key }}
