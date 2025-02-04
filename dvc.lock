@@ -30,27 +30,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 7afc2de2da3acad198ca8b92c710ef79.dir
-      size: 900254
-      nfiles: 390
+      md5: 140da881fddbdf164826c2a6f6e2bcde.dir
+      size: 902834
+      nfiles: 391
     - path: data/timeseries
       hash: md5
-      md5: 6b04e2f84d35f4874fc3b1a79f14be13.dir
-      size: 47596856
-      nfiles: 390
+      md5: 3d67ee125557010601e7f3c9e078e73c.dir
+      size: 47807055
+      nfiles: 391
   plot-weekly-dists:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 7afc2de2da3acad198ca8b92c710ef79.dir
-      size: 900254
-      nfiles: 390
+      md5: 140da881fddbdf164826c2a6f6e2bcde.dir
+      size: 902834
+      nfiles: 391
     - path: data/timeseries
       hash: md5
-      md5: 6b04e2f84d35f4874fc3b1a79f14be13.dir
-      size: 47596856
-      nfiles: 390
+      md5: 3d67ee125557010601e7f3c9e078e73c.dir
+      size: 47807055
+      nfiles: 391
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -62,20 +62,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 4eb016064e81ac073104f8315af712c5
-      size: 7725
+      md5: f686674a555d85f48ffcf55562d626d9
+      size: 7656
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: ac47113eaef7716808646b39dd772a5d
-      size: 26143
+      md5: 211697361512840001a14f7eae7eacf9
+      size: 26621
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 7afc2de2da3acad198ca8b92c710ef79.dir
-      size: 900254
-      nfiles: 390
+      md5: 140da881fddbdf164826c2a6f6e2bcde.dir
+      size: 902834
+      nfiles: 391
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -83,5 +83,5 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 35ad05c4404c32c4aa87eb923517e21f
-      size: 9422
+      md5: 16d89ff050ccd30e5add38b4b00939dd
+      size: 9323
