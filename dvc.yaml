@@ -32,11 +32,14 @@ stages:
     outs:
       - figures/weekly-energy.json:
           cache: false
-  # This stage was auto-generated from a calculation
   calc-latest-timestamp:
     cmd: calkit calc latest_timestamp
+    desc: >
+      This stage was automatically generated from the 'latest_timestamp'
+      calculation.
     deps:
       - data/activities # TODO: Auto-detect this?
+      - pyproject.toml # TODO: Auto-detect this
       - .calkit/calculations/latest_timestamp.yaml
     outs:
       - .calkit/calculations/outputs/latest_timestamp.yaml
