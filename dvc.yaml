@@ -34,7 +34,7 @@ stages:
           cache: false
   # This stage was auto-generated from a calculation
   calc-latest-timestamp:
-    cmd: calkit calc
+    cmd: calkit calc latest_timestamp
     deps:
       - data/activities # TODO: Auto-detect this?
       - .calkit/calculations/latest_timestamp.yaml
