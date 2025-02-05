@@ -81,3 +81,10 @@ showcase:
       the latest week of data. The figure below that shows these weekly
       distributions over the past 24 weeks, along with the total weekly
       energy expenditure.
+calculations:
+  latest_timestamp:
+    cache: true # Run as part of `calkit run` since input is not variable
+    # TODO: Should this just be part of the pipeline?
+    # We could store a metric instead of having this as a calculation, since
+    # calculations are meant to be interactive
+    # We can put them in the pipeline by reading this file first

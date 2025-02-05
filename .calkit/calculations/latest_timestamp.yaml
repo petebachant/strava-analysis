@@ -1,0 +1,9 @@
+name: latest_timestamp
+kind: sql
+engine: duckdb
+environment: main
+sql: select max(start_date) from 'data/activities/*.json'
+inputs: {}
+output:
+  name: latest_timestamp
+  type: datetime
