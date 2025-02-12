@@ -88,3 +88,7 @@ calculations:
     # We could store a metric instead of having this as a calculation, since
     # calculations are meant to be interactive
     # We can put them in the pipeline by reading this file first
+authors:
+  - first_name: Pete
+    last_name: Bachant
+    affiliation: Calkit
