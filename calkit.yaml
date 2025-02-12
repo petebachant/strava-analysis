@@ -92,3 +92,14 @@ authors:
   - first_name: Pete
     last_name: Bachant
     affiliation: Calkit
+releases:
+  v0.1.0:
+    kind: project
+    path: .
+    git_rev: 1318c4d
+    date: '2025-02-12'
+    publisher: zenodo.org
+    zenodo_dep_id: 165874
+    doi: 10.5072/zenodo.165874
+    url: https://doi.org/10.5072/zenodo.165874
+    description: An archive of all project files.

@@ -1,5 +1,7 @@
 # Strava analysis
 
+[![DOI](https://zenodo.org/badge/DOI/10.5072/zenodo.165874.svg)](https://handle.stage.datacite.org/10.5072/zenodo.165874)
+
 Collecting and analyzing data from Strava.
 The pipeline is designed to be run approximately daily,
 and will continuously accumulate data from new Strava activities.

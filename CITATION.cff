@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: If you use these files, please cite is using these metadata.
+title: Strava analysis
+abstract: Collecting and analyzing data from Strava.
+version: v0.1.0
+date-released: '2025-02-12'
+repository-code: https://github.com/petebachant/strava-analysis
+authors:
+  - family-names: Bachant
+    given-names: Pete
+identifiers:
+  - description: Release v0.1.0.
+    type: doi
+    value: 10.5072/zenodo.165874
