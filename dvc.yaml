@@ -42,4 +42,5 @@ stages:
       - pyproject.toml # TODO: Auto-detect this
       - .calkit/calculations/latest_timestamp.yaml
     outs:
-      - .calkit/calculations/outputs/latest_timestamp.yaml
+      - .calkit/calculations/outputs/latest_timestamp.yaml:
+          cache: false
