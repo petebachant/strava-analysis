@@ -103,3 +103,13 @@ releases:
     doi: 10.5072/zenodo.165874
     url: https://doi.org/10.5072/zenodo.165874
     description: An archive of all project files.
+  v0.2.0:
+    kind: project
+    path: .
+    git_rev: 961c275
+    date: '2025-02-13'
+    publisher: zenodo.org
+    zenodo_dep_id: 166284
+    doi: 10.5072/zenodo.166284
+    url: https://doi.org/10.5072/zenodo.166284
+    description: An archive of all project files.
