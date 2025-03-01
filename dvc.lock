@@ -30,27 +30,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 5db5a808a7c85c980d93b2d2ea773583.dir
-      size: 974215
-      nfiles: 423
+      md5: 6529c1783f6a29196d4dc1361c636f05.dir
+      size: 980085
+      nfiles: 426
     - path: data/timeseries
       hash: md5
-      md5: 374269e94a801f74f46d1877f15b8582.dir
-      size: 51543116
-      nfiles: 423
+      md5: 0d293de16e39a5ae6fd7dd3074cc3afa.dir
+      size: 51704226
+      nfiles: 426
   plot-weekly-dists:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 5db5a808a7c85c980d93b2d2ea773583.dir
-      size: 974215
-      nfiles: 423
+      md5: 6529c1783f6a29196d4dc1361c636f05.dir
+      size: 980085
+      nfiles: 426
     - path: data/timeseries
       hash: md5
-      md5: 374269e94a801f74f46d1877f15b8582.dir
-      size: 51543116
-      nfiles: 423
+      md5: 0d293de16e39a5ae6fd7dd3074cc3afa.dir
+      size: 51704226
+      nfiles: 426
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -62,20 +62,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 58a9f3eeaed384934e5e889572b0d1a6
+      md5: 346c90c9ce3dbfa79c38653e039824f9
       size: 7802
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: d0219b6e295865d0600ab109477e91b0
-      size: 26947
+      md5: aa96c2df098fa0499fe4f4b119dbdddd
+      size: 26937
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 5db5a808a7c85c980d93b2d2ea773583.dir
-      size: 974215
-      nfiles: 423
+      md5: 6529c1783f6a29196d4dc1361c636f05.dir
+      size: 980085
+      nfiles: 426
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -83,5 +83,5 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 3be9763cfec21a031516d9dddf84c45a
-      size: 9533
+      md5: 7406395c5779b7e8d049052b40d77f5f
+      size: 9511
