@@ -41,7 +41,7 @@ datasets:
 figures:
   - path: figures/dists-latest-week.json
     title: Power and heart rate distributions for the latest week (starting
-      2025-03-17)
+      2025-03-24)
     stage: plot-weekly-dists
   - path: figures/weekly-dists-24-weeks.json
     title: Weekly power and heart rate distributions for the past 24 weeks
