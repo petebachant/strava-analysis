@@ -30,27 +30,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 13ab659b3750686e01ec5fb85da8ffb0.dir
-      size: 914086
-      nfiles: 396
+      md5: 58a141ca3af2e8c4cbc398c9f4c6083a.dir
+      size: 1058245
+      nfiles: 461
     - path: data/timeseries
       hash: md5
-      md5: d494cdb5bcc1180024c50c0a73216c23.dir
-      size: 48116550
-      nfiles: 396
+      md5: d7f1bc16987a1702f7fd906cb2879da3.dir
+      size: 54157255
+      nfiles: 461
   plot-weekly-dists:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 13ab659b3750686e01ec5fb85da8ffb0.dir
-      size: 914086
-      nfiles: 396
+      md5: 58a141ca3af2e8c4cbc398c9f4c6083a.dir
+      size: 1058245
+      nfiles: 461
     - path: data/timeseries
       hash: md5
-      md5: d494cdb5bcc1180024c50c0a73216c23.dir
-      size: 48116550
-      nfiles: 396
+      md5: d7f1bc16987a1702f7fd906cb2879da3.dir
+      size: 54157255
+      nfiles: 461
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -62,20 +62,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 317239b656040fd0514cb2eff445c2e8
-      size: 7735
+      md5: 5f447ff8eae2dbd31d1cee270a451cb0
+      size: 7732
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: d80011284ff6ff9f817814a696f9fee4
-      size: 26770
+      md5: f53c4a94df7510cd4d4e4ea0121a9062
+      size: 26247
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 13ab659b3750686e01ec5fb85da8ffb0.dir
-      size: 914086
-      nfiles: 396
+      md5: 58a141ca3af2e8c4cbc398c9f4c6083a.dir
+      size: 1058245
+      nfiles: 461
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -83,5 +83,5 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: d85eff7305d7eceb959a01909f244e74
-      size: 9368
+      md5: 795203faf0e562d64311926729fdf688
+      size: 9665
