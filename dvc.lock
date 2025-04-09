@@ -30,27 +30,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: c58358092328cd41eb53e12971697d49.dir
-      size: 1076555
-      nfiles: 469
+      md5: 965cf2473543590e50db66bc5695df96.dir
+      size: 1078681
+      nfiles: 470
     - path: data/timeseries
       hash: md5
-      md5: a27d253c9e619af4b16ca4b16b69faae.dir
-      size: 54627971
-      nfiles: 469
+      md5: e68b2f9345e527b57efa98308d6e9727.dir
+      size: 54661736
+      nfiles: 470
   plot-weekly-dists:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: c58358092328cd41eb53e12971697d49.dir
-      size: 1076555
-      nfiles: 469
+      md5: 965cf2473543590e50db66bc5695df96.dir
+      size: 1078681
+      nfiles: 470
     - path: data/timeseries
       hash: md5
-      md5: a27d253c9e619af4b16ca4b16b69faae.dir
-      size: 54627971
-      nfiles: 469
+      md5: e68b2f9345e527b57efa98308d6e9727.dir
+      size: 54661736
+      nfiles: 470
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -66,16 +66,16 @@ stages:
       size: 7698
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: bb1df31aaa403efb79cf7862529cec9c
-      size: 26328
+      md5: 6857bac09a8036d609f75da98dbab23b
+      size: 26325
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: c58358092328cd41eb53e12971697d49.dir
-      size: 1076555
-      nfiles: 469
+      md5: 965cf2473543590e50db66bc5695df96.dir
+      size: 1078681
+      nfiles: 470
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -83,5 +83,5 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 590932cec44de266bc10b287d6cf91d0
-      size: 9750
+      md5: 42245a1e3c5b7fc1a5c6377a1e49c320
+      size: 9685
