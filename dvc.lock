@@ -30,27 +30,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 227cd2b5edba057d21ed41651c3ae989.dir
-      size: 1093927
-      nfiles: 477
+      md5: 90107c0eb62a6c2b33a5f97dfec01d98.dir
+      size: 1096525
+      nfiles: 478
     - path: data/timeseries
       hash: md5
-      md5: 950c56d97c29508938a42b1bebb657bc.dir
-      size: 55413508
-      nfiles: 477
+      md5: 93bd355e8dc2e441bd4d4c57fd0a9938.dir
+      size: 55721820
+      nfiles: 478
   plot-weekly-dists:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 227cd2b5edba057d21ed41651c3ae989.dir
-      size: 1093927
-      nfiles: 477
+      md5: 90107c0eb62a6c2b33a5f97dfec01d98.dir
+      size: 1096525
+      nfiles: 478
     - path: data/timeseries
       hash: md5
-      md5: 950c56d97c29508938a42b1bebb657bc.dir
-      size: 55413508
-      nfiles: 477
+      md5: 93bd355e8dc2e441bd4d4c57fd0a9938.dir
+      size: 55721820
+      nfiles: 478
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -62,20 +62,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 1fe9f2520320ba98c43dad221bf23030
-      size: 7719
+      md5: 390abc713f6c73c4c84170a275342282
+      size: 7693
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: adda12fc7c3557e8b60e32583f1bb92b
-      size: 26156
+      md5: fc1627a6cdcdc174226b29010716a4da
+      size: 26708
   plot-weekly-energy:
     cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 227cd2b5edba057d21ed41651c3ae989.dir
-      size: 1093927
-      nfiles: 477
+      md5: 90107c0eb62a6c2b33a5f97dfec01d98.dir
+      size: 1096525
+      nfiles: 478
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -83,5 +83,5 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: d77437695f4e9d94a7388c50c0e8a39d
-      size: 9668
+      md5: ff4292bbb3645c6b82be3ec3e1eebff3
+      size: 9681
