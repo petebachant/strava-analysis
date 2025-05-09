@@ -81,3 +81,55 @@ showcase:
       the latest week of data. The figure below that shows these weekly
       distributions over the past 24 weeks, along with the total weekly
       energy expenditure.
+calculations:
+  latest_timestamp:
+    cache: true # Run as part of `calkit run` since input is not variable
+    # TODO: Should this just be part of the pipeline?
+    # We could store a metric instead of having this as a calculation, since
+    # calculations are meant to be interactive
+    # We can put them in the pipeline by reading this file first
+authors:
+  - first_name: Pete
+    last_name: Bachant
+    affiliation: Calkit
+releases:
+  v0.1.0:
+    kind: project
+    path: .
+    git_rev: 1318c4d
+    date: '2025-02-12'
+    publisher: zenodo.org
+    zenodo_dep_id: 165874
+    doi: 10.5072/zenodo.165874
+    url: https://doi.org/10.5072/zenodo.165874
+    description: An archive of all project files.
+  v0.2.0:
+    kind: project
+    path: .
+    git_rev: 961c275
+    date: '2025-02-13'
+    publisher: zenodo.org
+    zenodo_dep_id: 166284
+    doi: 10.5072/zenodo.166284
+    url: https://doi.org/10.5072/zenodo.166284
+    description: An archive of all project files.
+  v0.2.1:
+    kind: project
+    path: .
+    git_rev: 5ca553d
+    date: '2025-02-13'
+    publisher: zenodo.org
+    zenodo_dep_id: 166286
+    doi: 10.5072/zenodo.166286
+    url: https://doi.org/10.5072/zenodo.166286
+    description: An archive of all project files.
+  submitted-article-1:
+    kind: project
+    path: .
+    git_rev: fcb67c4
+    date: '2025-02-13'
+    publisher: zenodo.org
+    zenodo_dep_id: 166294
+    doi: 10.5072/zenodo.166294
+    url: https://doi.org/10.5072/zenodo.166294
+    description: An archive of all project files.
