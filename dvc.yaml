@@ -1,34 +1,49 @@
 stages:
+  _check_env_main:
+    cmd: uv sync
+    deps:
+      - pyproject.toml
+    outs:
+      - uv.lock:
+          cache: false
+          persist: true
+    always_changed: true
   get-data:
-    cmd: calkit xenv -n main -- python scripts/get-data.py
+    cmd: calkit xenv -n main --no-check -- python scripts/get-data.py
     deps:
       - scripts/get-data.py
       - pypkg/strava.py
+      - uv.lock
     outs:
       - data/activities:
           cache: false
           persist: true
       - data/timeseries:
+          cache: true
           persist: true
     always_changed: true
   plot-weekly-dists:
-    desc: Plot weekly power and heart rate distributions.
-    cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
+    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
-      - data/timeseries
-      - data/activities
       - scripts/plot-weekly-dists.py
+      - data/activities
+      - data/timeseries
       - pypkg/plot.py
+      - uv.lock
     outs:
-      - figures/weekly-dists-24-weeks.json:
-          cache: false
       - figures/dists-latest-week.json:
           cache: false
+          persist: false
+      - figures/weekly-dists-24-weeks.json:
+          cache: false
+          persist: false
   plot-weekly-energy:
-    cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
+    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
-      - data/activities
       - scripts/plot-weekly-energy.py
+      - data/activities
+      - uv.lock
     outs:
       - figures/weekly-energy.json:
           cache: false
+          persist: false

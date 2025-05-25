@@ -17,7 +17,7 @@ stages:
       md5: 94a89a53666f71757859a2863caf7ff9
       size: 247
   get-data:
-    cmd: calkit xenv -n main -- python scripts/get-data.py
+    cmd: calkit xenv -n main --no-check -- python scripts/get-data.py
     deps:
     - path: pypkg/strava.py
       hash: md5
@@ -27,6 +27,10 @@ stages:
       hash: md5
       md5: de7fa36d844ca96ff57d7fcf01f29376
       size: 1218
+    - path: uv.lock
+      hash: md5
+      md5: f4a53f03e476692118ce463f6dd56db9
+      size: 327549
     outs:
     - path: data/activities
       hash: md5
@@ -39,7 +43,7 @@ stages:
       size: 58055283
       nfiles: 510
   plot-weekly-dists:
-    cmd: calkit xenv -n main -- python scripts/plot-weekly-dists.py
+    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
@@ -59,6 +63,10 @@ stages:
       hash: md5
       md5: edcb3d6364594299eb8a979b1b8cafa8
       size: 178
+    - path: uv.lock
+      hash: md5
+      md5: f4a53f03e476692118ce463f6dd56db9
+      size: 327549
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
@@ -66,10 +74,10 @@ stages:
       size: 7737
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: aa0905bb31597c0c1c6bffaef232e308
-      size: 26358
+      md5: 99a7f4f84ac23bec22146cda88a9dc06
+      size: 26367
   plot-weekly-energy:
-    cmd: calkit xenv -n main -- python scripts/plot-weekly-energy.py
+    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
@@ -80,8 +88,24 @@ stages:
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
       size: 489
+    - path: uv.lock
+      hash: md5
+      md5: f4a53f03e476692118ce463f6dd56db9
+      size: 327549
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 3ddf554ff9f399a69cc827ceb84fe47f
-      size: 9815
+      md5: 35a1e8e0982b6dfb392cbea051738a0d
+      size: 9968
+  _check_env_main:
+    cmd: uv sync
+    deps:
+    - path: pyproject.toml
+      hash: md5
+      md5: 382f63a01a3593879c47f3aca381825f
+      size: 776
+    outs:
+    - path: uv.lock
+      hash: md5
+      md5: f4a53f03e476692118ce463f6dd56db9
+      size: 327549

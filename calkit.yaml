@@ -3,6 +3,16 @@ name: strava-analysis
 title: Strava analysis
 description: Collecting and analyzing data from Strava.
 git_repo_url: https://github.com/petebachant/strava-analysis
+questions:
+  - Can we estimate a temperature-normalized power versus heart rate curve
+    to track changes in performance?
+  - What do my weekly power and heart rate distributions look like?
+  - How can I increase my total energy expenditure?
+  - What weekly power distribution should I strive for in order to maximize
+    performance?
+  - What weekly power distribution should I strive for in order to maximize
+    energy expenditure, assuming maximum energy expenditure correlates with
+    higher performance?
 dependencies:
   - STRAVA_CLIENT_ID:
       kind: env-var
@@ -17,16 +27,44 @@ environments:
   main:
     path: pyproject.toml
     kind: uv
-questions:
-  - Can we estimate a temperature-normalized power versus heart rate curve
-    to track changes in performance?
-  - What do my weekly power and heart rate distributions look like?
-  - How can I increase my total energy expenditure?
-  - What weekly power distribution should I strive for in order to maximize
-    performance?
-  - What weekly power distribution should I strive for in order to maximize
-    energy expenditure, assuming maximum energy expenditure correlates with
-    higher performance?
+pipeline:
+  stages:
+    get-data:
+      kind: python-script
+      script_path: scripts/get-data.py
+      environment: main
+      always_run: true
+      inputs:
+        - pypkg/strava.py
+      outputs:
+        - path: data/activities
+          storage: git
+          delete_before_run: false
+        - path: data/timeseries
+          storage: dvc
+          delete_before_run: false
+    plot-weekly-dists:
+      kind: python-script
+      script_path: scripts/plot-weekly-dists.py
+      environment: main
+      inputs:
+        - data/activities
+        - data/timeseries
+        - pypkg/plot.py
+      outputs:
+        - path: figures/dists-latest-week.json
+          storage: git
+        - path: figures/weekly-dists-24-weeks.json
+          storage: git
+    plot-weekly-energy:
+      kind: python-script
+      script_path: scripts/plot-weekly-energy.py
+      environment: main
+      inputs:
+        - data/activities
+      outputs:
+        - path: figures/weekly-energy.json
+          storage: git
 datasets:
   - path: data/activities
     stage: collect-data
