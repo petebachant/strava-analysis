@@ -1,5 +1,5 @@
 stages:
-  _check_env_main:
+  _check-env-main:
     cmd: uv sync
     deps:
       - pyproject.toml
