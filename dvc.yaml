@@ -23,7 +23,8 @@ stages:
           persist: true
     always_changed: true
   plot-weekly-dists:
-    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
+    cmd: calkit xenv -n main --no-check -- python 
+      scripts/plot-weekly-dists.py
     deps:
       - scripts/plot-weekly-dists.py
       - data/activities
@@ -38,7 +39,8 @@ stages:
           cache: false
           persist: false
   plot-weekly-energy:
-    cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
+    cmd: calkit xenv -n main --no-check -- python 
+      scripts/plot-weekly-energy.py
     deps:
       - scripts/plot-weekly-energy.py
       - data/activities
