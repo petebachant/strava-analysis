@@ -110,7 +110,7 @@ stages:
       md5: f4a53f03e476692118ce463f6dd56db9
       size: 327549
   _check-env-main:
-    cmd: uv sync
+    cmd: calkit check environment --name main
     deps:
     - path: pyproject.toml
       hash: md5
