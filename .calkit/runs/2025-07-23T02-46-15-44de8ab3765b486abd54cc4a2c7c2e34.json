@@ -1,0 +1,88 @@
+{
+  "id": "44de8ab3765b486abd54cc4a2c7c2e34",
+  "system_id": "a4607c7a2b06a53472451e41ead8ab9ddae6e8d3",
+  "start_time": "2025-07-23T02:46:15.915644+00:00",
+  "end_time": "2025-07-23T02:46:42.052181+00:00",
+  "targets": [],
+  "force": false,
+  "dvc_args": [],
+  "status": "completed",
+  "stages": {
+    "_check-env-main": {
+      "start_time": "2025-07-23T02:46:16.138000",
+      "end_time": "2025-07-23T02:46:17.241000",
+      "status": "completed"
+    },
+    "get-data": {
+      "start_time": "2025-07-23T02:46:17.241000",
+      "end_time": "2025-07-23T02:46:32.896000",
+      "status": "completed"
+    },
+    "plot-weekly-dists": {
+      "start_time": "2025-07-23T02:46:32.896000",
+      "end_time": "2025-07-23T02:46:37.934000",
+      "status": "completed"
+    },
+    "plot-weekly-energy": {
+      "start_time": "2025-07-23T02:46:37.934000"
+    }
+  },
+  "git_rev": "b9a8c9ffd30ff4c97b05cb7c43b6f4c9e1515801",
+  "git_branch": "main",
+  "git_changed_files_before": [],
+  "git_staged_files_before": [],
+  "git_untracked_files_before": [
+    ".calkit/systems/a4607c7a2b06a53472451e41ead8ab9ddae6e8d3.json"
+  ],
+  "git_changed_files_after": [
+    "figures/dists-latest-week.json",
+    "figures/weekly-dists-24-weeks.json",
+    "figures/weekly-energy.json"
+  ],
+  "git_staged_files_after": [
+    "dvc.lock"
+  ],
+  "git_untracked_files_after": [
+    ".calkit/systems/a4607c7a2b06a53472451e41ead8ab9ddae6e8d3.json",
+    "data/activities/15199978815.json",
+    "data/activities/15204060726.json"
+  ],
+  "dvc_status_before": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_before": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {},
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": [
+      "data/timeseries/"
+    ]
+  },
+  "dvc_status_after": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_after": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {
+      "modified": [
+        "data/timeseries/"
+      ]
+    },
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": []
+  }
+}
