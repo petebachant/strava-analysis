@@ -1,0 +1,23 @@
+{
+  "os": "Linux",
+  "os_version": "6.11.0-1018-azure",
+  "python_version": "3.13.5",
+  "calkit_version": "0.26.7",
+  "calkit_git_rev": null,
+  "hostname": "pkrvmpptgkbjq6m",
+  "processor": "x86_64",
+  "platform": "Linux-6.11.0-1018-azure-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python_implementation": "CPython",
+  "python_compiler": "GCC 13.3.0",
+  "memory_gb": 15.620681762695312,
+  "cpu_count": 4,
+  "node_id": 136469677600768,
+  "docker_version": "Docker version 28.0.4, build b8034c0",
+  "conda_version": "conda 25.5.1",
+  "mamba_version": null,
+  "uv_version": "uv 0.8.3",
+  "pixi_version": null,
+  "Rscript_version": null,
+  "id": "880340b08eb0f1c384a58750e5a4291a5c489a0f"
+}
