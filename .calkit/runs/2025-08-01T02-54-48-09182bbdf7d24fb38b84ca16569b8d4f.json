@@ -1,0 +1,90 @@
+{
+  "id": "09182bbdf7d24fb38b84ca16569b8d4f",
+  "system_id": "02c2f99592e48a749b73b5a79e65f6dba5f90ca1",
+  "start_time": "2025-08-01T02:54:48.536544+00:00",
+  "end_time": "2025-08-01T02:55:14.719781+00:00",
+  "targets": [],
+  "force": false,
+  "dvc_args": [],
+  "status": "completed",
+  "stages": {
+    "_check-env-main": {
+      "start_time": "2025-08-01T02:54:48.758000",
+      "end_time": "2025-08-01T02:54:49.852000",
+      "status": "completed"
+    },
+    "get-data": {
+      "start_time": "2025-08-01T02:54:49.852000",
+      "end_time": "2025-08-01T02:55:05.663000",
+      "status": "completed"
+    },
+    "plot-weekly-dists": {
+      "start_time": "2025-08-01T02:55:05.663000",
+      "end_time": "2025-08-01T02:55:10.610000",
+      "status": "completed"
+    },
+    "plot-weekly-energy": {
+      "start_time": "2025-08-01T02:55:10.610000"
+    }
+  },
+  "git_rev": "9c504aae67e3b73f646d17cf36b132e6fbc7008a",
+  "git_branch": "main",
+  "git_changed_files_before": [],
+  "git_staged_files_before": [],
+  "git_untracked_files_before": [
+    ".calkit/systems/02c2f99592e48a749b73b5a79e65f6dba5f90ca1.json"
+  ],
+  "git_changed_files_after": [
+    "figures/dists-latest-week.json",
+    "figures/weekly-dists-24-weeks.json",
+    "figures/weekly-energy.json"
+  ],
+  "git_staged_files_after": [
+    "dvc.lock"
+  ],
+  "git_untracked_files_after": [
+    ".calkit/systems/02c2f99592e48a749b73b5a79e65f6dba5f90ca1.json",
+    "data/activities/15293661275.json",
+    "data/activities/15293661353.json",
+    "data/activities/15301607499.json",
+    "data/activities/15303403562.json"
+  ],
+  "dvc_status_before": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_before": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {},
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": [
+      "data/timeseries/"
+    ]
+  },
+  "dvc_status_after": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_after": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {
+      "modified": [
+        "data/timeseries/"
+      ]
+    },
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": []
+  }
+}
