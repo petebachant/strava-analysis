@@ -1,0 +1,87 @@
+{
+  "id": "bddafbecb47e405eb87f51e5ee895593",
+  "system_id": "b166f5b9cda0d3d1bc94c9088a4f1ac1c11b5070",
+  "start_time": "2025-08-04T02:54:47.314992+00:00",
+  "end_time": "2025-08-04T02:55:13.083824+00:00",
+  "targets": [],
+  "force": false,
+  "dvc_args": [],
+  "status": "completed",
+  "stages": {
+    "_check-env-main": {
+      "start_time": "2025-08-04T02:54:47.534000",
+      "end_time": "2025-08-04T02:54:48.617000",
+      "status": "completed"
+    },
+    "get-data": {
+      "start_time": "2025-08-04T02:54:48.617000",
+      "end_time": "2025-08-04T02:55:04.104000",
+      "status": "completed"
+    },
+    "plot-weekly-dists": {
+      "start_time": "2025-08-04T02:55:04.104000",
+      "end_time": "2025-08-04T02:55:08.986000",
+      "status": "completed"
+    },
+    "plot-weekly-energy": {
+      "start_time": "2025-08-04T02:55:08.986000"
+    }
+  },
+  "git_rev": "90b548aac078ecb632add84d903942214db6801b",
+  "git_branch": "main",
+  "git_changed_files_before": [],
+  "git_staged_files_before": [],
+  "git_untracked_files_before": [
+    ".calkit/systems/b166f5b9cda0d3d1bc94c9088a4f1ac1c11b5070.json"
+  ],
+  "git_changed_files_after": [
+    "figures/dists-latest-week.json",
+    "figures/weekly-dists-24-weeks.json",
+    "figures/weekly-energy.json"
+  ],
+  "git_staged_files_after": [
+    "dvc.lock"
+  ],
+  "git_untracked_files_after": [
+    ".calkit/systems/b166f5b9cda0d3d1bc94c9088a4f1ac1c11b5070.json",
+    "data/activities/15334917447.json"
+  ],
+  "dvc_status_before": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_before": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {},
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": [
+      "data/timeseries/"
+    ]
+  },
+  "dvc_status_after": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_after": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {
+      "modified": [
+        "data/timeseries/"
+      ]
+    },
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": []
+  }
+}
