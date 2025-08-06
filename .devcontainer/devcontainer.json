@@ -13,7 +13,9 @@
         "streetsidesoftware.code-spell-checker",
         "redhat.vscode-yaml",
         "akamud.vscode-theme-onedark",
-        "mechatroner.rainbow-csv"
+        "mechatroner.rainbow-csv",
+        "julialang.language-julia",
+        "ms-toolsai.jupyter"
       ],
       "settings": {
         "latex-workshop.latex.external.build.command": "calkit",
@@ -36,6 +38,8 @@
       }
     }
   },
-  "postCreateCommand": "conda init bash",
-  "postStartCommand": "docker pull texlive/texlive:latest-full"
+  "mounts": [
+    "source=${localEnv:HOME}/.calkit,target=/home/vscode/.calkit,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "conda init bash"
 }
