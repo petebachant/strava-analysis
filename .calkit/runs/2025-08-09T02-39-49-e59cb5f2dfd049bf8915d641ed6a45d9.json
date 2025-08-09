@@ -1,0 +1,80 @@
+{
+  "id": "e59cb5f2dfd049bf8915d641ed6a45d9",
+  "system_id": "b06b91eb87cec339889502070665b646f5c87d0e",
+  "start_time": "2025-08-09T02:39:49.251012+00:00",
+  "end_time": "2025-08-09T02:40:11.345801+00:00",
+  "targets": [],
+  "force": false,
+  "dvc_args": [],
+  "status": "completed",
+  "stages": {
+    "_check-env-main": {
+      "start_time": "2025-08-09T02:39:49.573000",
+      "end_time": "2025-08-09T02:39:52.657000",
+      "status": "completed"
+    },
+    "get-data": {
+      "start_time": "2025-08-09T02:39:52.657000",
+      "end_time": "2025-08-09T02:40:10.031000",
+      "status": "completed"
+    },
+    "plot-weekly-dists": {
+      "start_time": "2025-08-09T02:40:10.031000",
+      "end_time": "2025-08-09T02:40:10.031000",
+      "status": "skipped"
+    },
+    "plot-weekly-energy": {
+      "start_time": "2025-08-09T02:40:10.288000",
+      "end_time": "2025-08-09T02:40:10.288000",
+      "status": "skipped"
+    }
+  },
+  "git_rev": "5be3bdc04f67cc8ae670627904af91371448c198",
+  "git_branch": "main",
+  "git_changed_files_before": [],
+  "git_staged_files_before": [],
+  "git_untracked_files_before": [
+    ".calkit/systems/b06b91eb87cec339889502070665b646f5c87d0e.json"
+  ],
+  "git_changed_files_after": [],
+  "git_staged_files_after": [],
+  "git_untracked_files_after": [
+    ".calkit/systems/b06b91eb87cec339889502070665b646f5c87d0e.json"
+  ],
+  "dvc_status_before": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_before": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {},
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": [
+      "data/timeseries/"
+    ]
+  },
+  "dvc_status_after": {
+    "_check-env-main": [
+      "always changed"
+    ],
+    "get-data": [
+      "always changed"
+    ]
+  },
+  "dvc_data_status_after": {
+    "not_in_cache": [],
+    "not_in_remote": [],
+    "committed": {},
+    "uncommitted": {},
+    "untracked": [],
+    "unchanged": [
+      "data/timeseries/"
+    ]
+  }
+}
