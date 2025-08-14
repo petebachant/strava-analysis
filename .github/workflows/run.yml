@@ -28,7 +28,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .dvc/cache
-          key: ${{ runner.os }}-dvc-cache
+          key: ${{ runner.os }}-dvc-cache-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-dvc-cache-
       - run: calkit config remote-auth
         env:
           CALKIT_DVC_TOKEN: ${{ secrets.CALKIT_DVC_TOKEN }}
@@ -46,4 +48,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .dvc/cache
-          key: ${{ steps.cache-dvc-restore.outputs.cache-primary-key }}
+          key: ${{ runner.os }}-dvc-cache-${{ github.sha }}
