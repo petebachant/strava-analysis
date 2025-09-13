@@ -34,27 +34,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: e51728cf1732d758d36dda01ed08242a.dir
-      size: 1482234
-      nfiles: 688
+      md5: 5da402cc93f9e354baa28e5907926f75.dir
+      size: 1486635
+      nfiles: 691
     - path: data/timeseries
       hash: md5
-      md5: d7bed2d7e00a1c332917a09035cac2bc.dir
-      size: 70908295
-      nfiles: 688
+      md5: 3dbdccaf0379e1495f99985dbc3cc5a6.dir
+      size: 70966686
+      nfiles: 691
   plot-weekly-dists:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: e51728cf1732d758d36dda01ed08242a.dir
-      size: 1482234
-      nfiles: 688
+      md5: 5da402cc93f9e354baa28e5907926f75.dir
+      size: 1486635
+      nfiles: 691
     - path: data/timeseries
       hash: md5
-      md5: d7bed2d7e00a1c332917a09035cac2bc.dir
-      size: 70908295
-      nfiles: 688
+      md5: 3dbdccaf0379e1495f99985dbc3cc5a6.dir
+      size: 70966686
+      nfiles: 691
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -70,20 +70,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 330d8b7ef362bc7aebb44568c52f8e9c
+      md5: 2e9f7695d2cbb5e9ced2e98095ccd389
       size: 7691
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: c9ee0eb70dad24eb06a2f1c647313df6
-      size: 26346
+      md5: 1b87ffecc48a8d1bb25ed1e2dd871a0f
+      size: 26392
   plot-weekly-energy:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: e51728cf1732d758d36dda01ed08242a.dir
-      size: 1482234
-      nfiles: 688
+      md5: 5da402cc93f9e354baa28e5907926f75.dir
+      size: 1486635
+      nfiles: 691
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -95,8 +95,8 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 53d036b2cea31204be18019161a8f6eb
-      size: 10322
+      md5: 71538a1f86d3bb1d07391448689d476f
+      size: 10392
   _check_env_main:
     cmd: uv sync
     deps:
