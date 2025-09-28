@@ -3,6 +3,7 @@ name: strava-analysis
 title: Strava analysis
 description: Collecting and analyzing data from Strava.
 git_repo_url: https://github.com/petebachant/strava-analysis
+
 questions:
   - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?
@@ -13,6 +14,7 @@ questions:
   - What weekly power distribution should I strive for in order to maximize
     energy expenditure, assuming maximum energy expenditure correlates with
     higher performance?
+
 dependencies:
   - name: STRAVA_CLIENT_ID
     kind: env-var
@@ -23,10 +25,12 @@ dependencies:
   - name: STRAVA_CLIENT_SECRET
     kind: env-var
   - uv
+
 environments:
   main:
     path: pyproject.toml
     kind: uv
+
 pipeline:
   stages:
     get-data:
@@ -65,17 +69,19 @@ pipeline:
       outputs:
         - path: figures/weekly-energy.json
           storage: git
+
 datasets:
   - path: data/activities
-    stage: collect-data
+    stage: get-data
     title: Activities
     description: An index of all activities as raw JSON files.
   - path: data/timeseries
-    stage: collect-data
+    stage: get-data
     title: Time series
     description: >
       Time series data from all activities, Hive-partitioned by activity
       ID.
+
 figures:
   - path: figures/dists-latest-week.json
     title: Power and heart rate distributions for the latest week (starting
@@ -87,6 +93,7 @@ figures:
   - path: figures/weekly-energy.json
     title: Weekly energy expenditure
     stage: plot-weekly-energy
+
 figure_groups:
   # Paths will be found by globbing params
   # Get individual figure from API with
@@ -104,13 +111,16 @@ figure_groups:
         sort: desc
     title: Weekly power and heart rate distributions
     stage: plot-weekly-dists
+
 references:
   - path: references.bib
+
 notebooks:
   - path: notebooks/main.ipynb
     name: main
     title: Analysis dev template
     template: true # By default, the first cell of a template notebook is dropped?
+
 showcase:
   - figure: figures/dists-latest-week.json
   - figure: figures/weekly-dists-24-weeks.json
