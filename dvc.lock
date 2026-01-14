@@ -34,27 +34,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 816c4586ca0599c45da2d1c613b6a96c.dir
-      size: 1815017
-      nfiles: 864
+      md5: 23dafe159354c9a485d7575fb111f151.dir
+      size: 1816265
+      nfiles: 865
     - path: data/timeseries
       hash: md5
-      md5: 75d55e31a94361551d1511c035f39624.dir
-      size: 85165128
-      nfiles: 864
+      md5: a86d5ec851500d1e03ab39c9657429d7.dir
+      size: 85170667
+      nfiles: 865
   plot-weekly-dists:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 816c4586ca0599c45da2d1c613b6a96c.dir
-      size: 1815017
-      nfiles: 864
+      md5: 23dafe159354c9a485d7575fb111f151.dir
+      size: 1816265
+      nfiles: 865
     - path: data/timeseries
       hash: md5
-      md5: 75d55e31a94361551d1511c035f39624.dir
-      size: 85165128
-      nfiles: 864
+      md5: a86d5ec851500d1e03ab39c9657429d7.dir
+      size: 85170667
+      nfiles: 865
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -74,16 +74,16 @@ stages:
       size: 7733
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: 51a83b1e63a01437e57d029521861f91
-      size: 26168
+      md5: 6652350a40ac7f4a27a36dd700829b50
+      size: 26351
   plot-weekly-energy:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 816c4586ca0599c45da2d1c613b6a96c.dir
-      size: 1815017
-      nfiles: 864
+      md5: 23dafe159354c9a485d7575fb111f151.dir
+      size: 1816265
+      nfiles: 865
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -95,8 +95,8 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: d30468839ff4dbd988a734e413465f2e
-      size: 10860
+      md5: f4786c0099ffa725d3871c267ea1dd44
+      size: 10889
   _check_env_main:
     cmd: uv sync
     deps:
