@@ -34,27 +34,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 6148772a585f5dd549823221615e067b.dir
-      size: 1829894
-      nfiles: 872
+      md5: 6837bb5212bbd3003248be2e0dc38be6.dir
+      size: 1832348
+      nfiles: 873
     - path: data/timeseries
       hash: md5
-      md5: 87cc0af1aa1a5209cb4f49741e0e834e.dir
-      size: 85893465
-      nfiles: 872
+      md5: 7d925f34849756847d05b8176bbf18a7.dir
+      size: 86020384
+      nfiles: 873
   plot-weekly-dists:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 6148772a585f5dd549823221615e067b.dir
-      size: 1829894
-      nfiles: 872
+      md5: 6837bb5212bbd3003248be2e0dc38be6.dir
+      size: 1832348
+      nfiles: 873
     - path: data/timeseries
       hash: md5
-      md5: 87cc0af1aa1a5209cb4f49741e0e834e.dir
-      size: 85893465
-      nfiles: 872
+      md5: 7d925f34849756847d05b8176bbf18a7.dir
+      size: 86020384
+      nfiles: 873
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -70,20 +70,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: fdb2b2fae18057b4c2b7c44b9bf10d45
-      size: 7665
+      md5: 3e58797d7f9c9b0d1b2167e4bf5e18f7
+      size: 7658
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: b3d459c649faa6f409e7b0c679f34d10
-      size: 26830
+      md5: 12964e8199ef6b28b800e3d9d96b3b86
+      size: 26807
   plot-weekly-energy:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 6148772a585f5dd549823221615e067b.dir
-      size: 1829894
-      nfiles: 872
+      md5: 6837bb5212bbd3003248be2e0dc38be6.dir
+      size: 1832348
+      nfiles: 873
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -95,8 +95,8 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 04c863c80a0a77c2a80f78a626c2955a
-      size: 10922
+      md5: f1c23a082cd03db01f7a06a70c4162a3
+      size: 10905
   _check_env_main:
     cmd: uv sync
     deps:
