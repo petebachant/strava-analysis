@@ -34,3 +34,7 @@ jobs:
       # This action automatically runs necessary setup steps based on environments
       - name: Run Calkit
         uses: calkit/run-action@v2
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
