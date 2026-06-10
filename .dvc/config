@@ -3,9 +3,3 @@
     remote = calkit
 ['remote "calkit"']
     url = ck://petebachant/strava-analysis
-['remote "calkit-local"']
-    url = http://api.localhost/projects/petebachant/strava-analysis/dvc
-    auth = custom
-['remote "calkit-staging"']
-    url = https://api.staging.calkit.io/projects/petebachant/strava-analysis/dvc
-    auth = custom
