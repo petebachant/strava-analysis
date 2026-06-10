@@ -2,8 +2,7 @@
     autostage = true
     remote = calkit
 ['remote "calkit"']
-    url = https://api.calkit.io/projects/petebachant/strava-analysis/dvc
-    auth = custom
+    url = ck://petebachant/strava-analysis
 ['remote "calkit-local"']
     url = http://api.localhost/projects/petebachant/strava-analysis/dvc
     auth = custom
