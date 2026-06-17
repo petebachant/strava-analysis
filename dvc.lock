@@ -34,27 +34,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 703279b9639c738d83c1fe30a0c194f5.dir
-      size: 2268074
-      nfiles: 1104
+      md5: 648fbff9913d17d934927bdf503784f3.dir
+      size: 2271209
+      nfiles: 1106
     - path: data/timeseries
       hash: md5
-      md5: 9bfd63414dbaa588b41210757af11156.dir
-      size: 103348250
-      nfiles: 1104
+      md5: a3b5025111af10601f1b6cd5775d2421.dir
+      size: 103379469
+      nfiles: 1106
   plot-weekly-dists:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 703279b9639c738d83c1fe30a0c194f5.dir
-      size: 2268074
-      nfiles: 1104
+      md5: 648fbff9913d17d934927bdf503784f3.dir
+      size: 2271209
+      nfiles: 1106
     - path: data/timeseries
       hash: md5
-      md5: 9bfd63414dbaa588b41210757af11156.dir
-      size: 103348250
-      nfiles: 1104
+      md5: a3b5025111af10601f1b6cd5775d2421.dir
+      size: 103379469
+      nfiles: 1106
     - path: pypkg/plot.py
       hash: md5
       md5: 5ecc23fa3f9e4fbdabfdcdd62c093ed0
@@ -74,16 +74,16 @@ stages:
       size: 7731
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: 62df4c83688cb8bc47fe5caaf89409af
-      size: 26539
+      md5: ac304a1a663447a9721ba7d944a988ea
+      size: 26640
   plot-weekly-energy:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 703279b9639c738d83c1fe30a0c194f5.dir
-      size: 2268074
-      nfiles: 1104
+      md5: 648fbff9913d17d934927bdf503784f3.dir
+      size: 2271209
+      nfiles: 1106
     - path: scripts/plot-weekly-energy.py
       hash: md5
       md5: 46ba23f31e1d1d6fab5551057db74715
@@ -95,8 +95,8 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: 239bde8d450c0b227bd92caf18fbd231
-      size: 11728
+      md5: e2758431ec2970aab6c0e6a39d75a1d7
+      size: 11650
   _check_env_main:
     cmd: uv sync
     deps:
