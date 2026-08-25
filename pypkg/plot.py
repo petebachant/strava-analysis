@@ -38,11 +38,26 @@ def get_ts_data(lookback_weeks=52) -> pl.DataFrame:
         """,
         )
         .pl()
+        .pipe(_ensure_columns, ["watts", "heartrate"])
         .with_columns(
             power_zone=pl.col("watts").cut(breaks=POWER_BINS),
             hr_zone=pl.col("heartrate").cut(breaks=HR_BINS),
         )
     )
+
+
+def _ensure_columns(df: pl.DataFrame, cols: list[str]) -> pl.DataFrame:
+    """Add any missing columns as all-null floats.
+
+    Not every activity has every stream (e.g., no power meter), so a
+    column can be absent entirely if no activity in the dataset has it.
+    """
+    missing = [c for c in cols if c not in df.columns]
+    if missing:
+        df = df.with_columns(
+            [pl.lit(None, dtype=pl.Float64).alias(c) for c in missing]
+        )
+    return df
 
 
 def plot_weekly_dists(lookback_weeks=12, save=True) -> go.Figure:
@@ -169,7 +184,10 @@ def plot_latest_week_dists(save=True) -> go.Figure:
         .with_columns(hours=pl.col("len") / 3600)
         .rename(dict(ts="week_start", len="seconds"))
     )
-    latest_week = dfg_power["week_start"].max()
+    # Use whichever of power/HR has data (some activities lack power)
+    latest_week = pl.concat(
+        [dfg_power["week_start"], dfg_hr["week_start"]]
+    ).max()
     week_start = latest_week
     df1_p = dfg_power.filter(pl.col("week_start") == week_start)
     df1_hr = dfg_hr.filter(pl.col("week_start") == week_start)
@@ -197,10 +215,10 @@ def plot_latest_week_dists(save=True) -> go.Figure:
         fig.write_json(outpath)
         # Update the first figure in calkit.yaml to have this path
         ck_info = calkit.load_calkit_info()
-        ck_info["figures"][0]["title"] = (
-            "Power and heart rate distributions for the latest week "
-            f"(starting {latest_week.date()})"
-        )
+        title = "Power and heart rate distributions for the latest week"
+        if latest_week is not None:
+            title += f" (starting {latest_week.date()})"
+        ck_info["figures"][0]["title"] = title
         with open("calkit.yaml", "w") as f:
             calkit.ryaml.dump(ck_info, f)
     return fig

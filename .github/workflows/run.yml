@@ -35,7 +35,7 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       # This action automatically runs necessary setup steps based on environments
       - name: Run Calkit
-        uses: calkit/run-action@v2
+        uses: calkit/calkit/actions/run@main
         env:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}

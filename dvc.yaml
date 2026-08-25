@@ -5,6 +5,7 @@ stages:
       - scripts/get-data.py
       - pypkg/strava.py
       - uv.lock
+      - pypkg
     outs:
       - data/activities:
           cache: false
@@ -13,10 +14,10 @@ stages:
           cache: true
           persist: true
     always_changed: true
-    desc: Automatically generated from the 'get-data' stage in 
+    desc: Automatically generated from the 'get-data' stage in
       calkit.yaml. Changes made here will be overwritten.
   plot-weekly-dists:
-    cmd: calkit xenv -n main --no-check -- python 
+    cmd: calkit xenv -n main --no-check -- python
       scripts/plot-weekly-dists.py
     deps:
       - scripts/plot-weekly-dists.py
@@ -24,6 +25,7 @@ stages:
       - data/timeseries
       - pypkg/plot.py
       - uv.lock
+      - pypkg
     outs:
       - figures/dists-latest-week.json:
           cache: false
@@ -31,18 +33,19 @@ stages:
       - figures/weekly-dists-24-weeks.json:
           cache: false
           persist: false
-    desc: Automatically generated from the 'plot-weekly-dists' stage 
+    desc: Automatically generated from the 'plot-weekly-dists' stage
       in calkit.yaml. Changes made here will be overwritten.
   plot-weekly-energy:
-    cmd: calkit xenv -n main --no-check -- python 
+    cmd: calkit xenv -n main --no-check -- python
       scripts/plot-weekly-energy.py
     deps:
       - scripts/plot-weekly-energy.py
       - data/activities
       - uv.lock
+      - pypkg
     outs:
       - figures/weekly-energy.json:
           cache: false
           persist: false
-    desc: Automatically generated from the 'plot-weekly-energy' stage 
+    desc: Automatically generated from the 'plot-weekly-energy' stage
       in calkit.yaml. Changes made here will be overwritten.
