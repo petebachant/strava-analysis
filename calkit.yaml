@@ -7,7 +7,14 @@ git_repo_url: https://github.com/petebachant/strava-analysis
 questions:
   - Can we estimate a temperature-normalized power versus heart rate curve
     to track changes in performance?
-  - What do my weekly power and heart rate distributions look like?
+  - question: What do my weekly power and heart rate distributions look
+      like?
+    answer: See evidence.
+    evidence:
+      - kind: figure
+        path: figures/dists-latest-week.json
+      - kind: figure
+        path: figures/weekly-dists-24-weeks.json
   - How can I increase my total energy expenditure?
   - What weekly power distribution should I strive for in order to maximize
     performance?
