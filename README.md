@@ -6,7 +6,7 @@ and will continuously accumulate data from new Strava activities.
 
 ## Setup
 
-If you look at the `dependencies` in `calkit.yaml` you'll see you need to
+If you look at the `requirements` in `calkit.yaml` you'll see you need to
 define two environmental variables,
 `STRAVA_CLIENT_ID` and `STRAVA_CLIENT_SECRET`.
 These can be obtained when you 
