@@ -39,27 +39,27 @@ stages:
     outs:
     - path: data/activities
       hash: md5
-      md5: 30ad7e29821db48f9e28776a278617cc.dir
-      size: 2599119
-      nfiles: 1284
+      md5: 4d4b5205d3a4ac9665abe1e746f41075.dir
+      size: 2602262
+      nfiles: 1286
     - path: data/timeseries
       hash: md5
-      md5: 66b115a1ac0cab6865858a80e96d3067.dir
-      size: 117762563
-      nfiles: 1284
+      md5: 0253d92b543cffafe1080f87f75d763a.dir
+      size: 117792114
+      nfiles: 1286
   plot-weekly-dists:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-dists.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 30ad7e29821db48f9e28776a278617cc.dir
-      size: 2599119
-      nfiles: 1284
+      md5: 4d4b5205d3a4ac9665abe1e746f41075.dir
+      size: 2602262
+      nfiles: 1286
     - path: data/timeseries
       hash: md5
-      md5: 66b115a1ac0cab6865858a80e96d3067.dir
-      size: 117762563
-      nfiles: 1284
+      md5: 0253d92b543cffafe1080f87f75d763a.dir
+      size: 117792114
+      nfiles: 1286
     - path: pypkg
       hash: md5
       md5: 143200c3878f53871ce028a293218e16.dir
@@ -80,20 +80,20 @@ stages:
     outs:
     - path: figures/dists-latest-week.json
       hash: md5
-      md5: 9a748ce3c7047cee86848e36fb8c4577
+      md5: 8fc9785dd2a8bdba39e9a1588614386f
       size: 7479
     - path: figures/weekly-dists-24-weeks.json
       hash: md5
-      md5: f3e0858b785283d79138cc4112cd8e14
-      size: 26649
+      md5: d098881f2b9ce23e27a8ce9c67ea77b9
+      size: 26635
   plot-weekly-energy:
     cmd: calkit xenv -n main --no-check -- python scripts/plot-weekly-energy.py
     deps:
     - path: data/activities
       hash: md5
-      md5: 30ad7e29821db48f9e28776a278617cc.dir
-      size: 2599119
-      nfiles: 1284
+      md5: 4d4b5205d3a4ac9665abe1e746f41075.dir
+      size: 2602262
+      nfiles: 1286
     - path: pypkg
       hash: md5
       md5: 143200c3878f53871ce028a293218e16.dir
@@ -110,8 +110,8 @@ stages:
     outs:
     - path: figures/weekly-energy.json
       hash: md5
-      md5: c51e6238d9bbf8719bad44324ad2078f
-      size: 12157
+      md5: 0e673e3367e45e20a92f934929c9e0a4
+      size: 12222
   _check_env_main:
     cmd: uv sync
     deps:
