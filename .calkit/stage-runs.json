@@ -1,11 +1,11 @@
 {
   "get-data": {
-    "start_time": "2026-10-20T02:07:05.620000",
-    "end_time": "2026-10-20T02:07:11.485000",
+    "start_time": "2026-10-21T02:09:19.913000",
+    "end_time": "2026-10-21T02:09:27.996000",
     "environment": "main",
-    "git_rev": "26be1bc416a349b8fdad7a1edbf9da5a4ed34429",
+    "git_rev": "09810fbfe1fa4b256c5fc24c390c0c87808bd270",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:873021e4a90793873095c115b923987309fcdc2266d211655a6a79d1d39481dc",
+    "dvc_lock_hash": "sha256:4e369aee32ec2fa3a03776437d5722e476f42420b1962b022fa6ba2445e351ee",
     "calkit_version": "0.49.2",
     "system": {
       "machine_id": "6b80cb66c24c4cf8ba62e40236d3cfda",
@@ -18,17 +18,17 @@
     }
   },
   "plot-weekly-dists": {
-    "start_time": "2026-10-19T02:10:48.698000",
-    "end_time": "2026-10-19T02:10:52.728000",
+    "start_time": "2026-10-21T02:09:27.996000",
+    "end_time": "2026-10-21T02:09:31.971000",
     "environment": "main",
-    "git_rev": "e1a845dad55cadea5d2b04a66caf5c5d64e7cbe2",
+    "git_rev": "09810fbfe1fa4b256c5fc24c390c0c87808bd270",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:822bd636a1f68eae3c48c0a96b1d708f0d5064635545c9b904b9ef99ddddcdb6",
+    "dvc_lock_hash": "sha256:782fcd7b4909059344c6b2e706a3dd0412492a26fbeb9ce578a384634285ae60",
     "calkit_version": "0.49.2",
     "system": {
-      "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
+      "machine_id": "6b80cb66c24c4cf8ba62e40236d3cfda",
       "os": "Linux",
-      "os_version": "6.17.0-1022-azure",
+      "os_version": "7.0.0-1017-azure",
       "machine": "x86_64",
       "processor": "x86_64",
       "cpu_count": 4,
@@ -36,17 +36,17 @@
     }
   },
   "plot-weekly-energy": {
-    "start_time": "2026-10-19T02:10:52.728000",
-    "end_time": "2026-10-19T02:10:55.415000",
+    "start_time": "2026-10-21T02:09:31.971000",
+    "end_time": "2026-10-21T02:09:34.500000",
     "environment": "main",
-    "git_rev": "e1a845dad55cadea5d2b04a66caf5c5d64e7cbe2",
+    "git_rev": "09810fbfe1fa4b256c5fc24c390c0c87808bd270",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:ae7771bda108a86295a6a30d3af6d8af94ef5e8775eafeb54383b9a669a29b3d",
+    "dvc_lock_hash": "sha256:26864ffa342014ae41547b93f4ce405aa1fc09ab0bfb73a0ea782ea9f06d5d29",
     "calkit_version": "0.49.2",
     "system": {
-      "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
+      "machine_id": "6b80cb66c24c4cf8ba62e40236d3cfda",
       "os": "Linux",
-      "os_version": "6.17.0-1022-azure",
+      "os_version": "7.0.0-1017-azure",
       "machine": "x86_64",
       "processor": "x86_64",
       "cpu_count": 4,
