@@ -1,12 +1,12 @@
 {
   "get-data": {
-    "start_time": "2026-10-24T02:07:42.870000",
-    "end_time": "2026-10-24T02:07:50.930000",
+    "start_time": "2026-10-25T02:09:10.985000",
+    "end_time": "2026-10-25T02:09:19.747000",
     "environment": "main",
-    "git_rev": "6ec3270d2bd834de3463faeffb242dfcd436f128",
+    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:b1923dd3600e0bb75ca496efc75a9602e43b7fb747d23fd532f52e0f77347192",
-    "calkit_version": "0.49.3",
+    "dvc_lock_hash": "sha256:bbc082b239c5925b4a73ab073b83632eda259d3f7ea8a5d0100070dedd445229",
+    "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
       "os": "Linux",
@@ -18,13 +18,13 @@
     }
   },
   "plot-weekly-dists": {
-    "start_time": "2026-10-24T02:07:50.930000",
-    "end_time": "2026-10-24T02:07:54.844000",
+    "start_time": "2026-10-25T02:09:19.747000",
+    "end_time": "2026-10-25T02:09:23.584000",
     "environment": "main",
-    "git_rev": "6ec3270d2bd834de3463faeffb242dfcd436f128",
+    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:8e47c05a3f023c3cff91e6a641a05061a4d12b40ff034272fae1d767254bcb6b",
-    "calkit_version": "0.49.3",
+    "dvc_lock_hash": "sha256:1484c2fc5dfd3fa55794340d3ccb9ed7f88bbf99de7d0db65e81f9249b4888e7",
+    "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
       "os": "Linux",
@@ -36,13 +36,13 @@
     }
   },
   "plot-weekly-energy": {
-    "start_time": "2026-10-24T02:07:54.844000",
-    "end_time": "2026-10-24T02:07:57.362000",
+    "start_time": "2026-10-25T02:09:23.584000",
+    "end_time": "2026-10-25T02:09:26",
     "environment": "main",
-    "git_rev": "6ec3270d2bd834de3463faeffb242dfcd436f128",
+    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:bc2457eeb5314917a2a7b8f2fd2e9467e0a12db86e3ef1e631be7e62dbe5c9f0",
-    "calkit_version": "0.49.3",
+    "dvc_lock_hash": "sha256:517508b35194f346d5fb0fccf3b06fe10d9a65fe07cc1887019ac0fd2d364767",
+    "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
       "os": "Linux",
