@@ -1,11 +1,11 @@
 {
   "get-data": {
-    "start_time": "2026-10-25T02:09:10.985000",
-    "end_time": "2026-10-25T02:09:19.747000",
+    "start_time": "2026-10-26T02:13:09.235000",
+    "end_time": "2026-10-26T02:13:17.398000",
     "environment": "main",
-    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
+    "git_rev": "0a007ee828e7f8ec9c13549466f4241b9743bdc2",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:bbc082b239c5925b4a73ab073b83632eda259d3f7ea8a5d0100070dedd445229",
+    "dvc_lock_hash": "sha256:1695953388258f4bc3aae542cee9060c76a525b0c51c93f61483d1f889ccda52",
     "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
@@ -18,12 +18,12 @@
     }
   },
   "plot-weekly-dists": {
-    "start_time": "2026-10-25T02:09:19.747000",
-    "end_time": "2026-10-25T02:09:23.584000",
+    "start_time": "2026-10-26T02:13:17.398000",
+    "end_time": "2026-10-26T02:13:21.478000",
     "environment": "main",
-    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
+    "git_rev": "0a007ee828e7f8ec9c13549466f4241b9743bdc2",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:1484c2fc5dfd3fa55794340d3ccb9ed7f88bbf99de7d0db65e81f9249b4888e7",
+    "dvc_lock_hash": "sha256:98de9f15d79c18d84252890d6382c3e98984d4be681b351ae686d6b50090ad09",
     "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
@@ -36,12 +36,12 @@
     }
   },
   "plot-weekly-energy": {
-    "start_time": "2026-10-25T02:09:23.584000",
-    "end_time": "2026-10-25T02:09:26",
+    "start_time": "2026-10-26T02:13:21.478000",
+    "end_time": "2026-10-26T02:13:24.073000",
     "environment": "main",
-    "git_rev": "c67d8a59de6921f723575bc1c65b6424aa246568",
+    "git_rev": "0a007ee828e7f8ec9c13549466f4241b9743bdc2",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:517508b35194f346d5fb0fccf3b06fe10d9a65fe07cc1887019ac0fd2d364767",
+    "dvc_lock_hash": "sha256:cfd2af0821be0fdfbaa659fd084c480791451d3bb565f3f8f8edd2b7f9c5dcff",
     "calkit_version": "0.49.5",
     "system": {
       "machine_id": "2d791d5cce6240faa3c626058b1ffc7d",
