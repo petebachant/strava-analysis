@@ -1,11 +1,11 @@
 {
   "get-data": {
-    "start_time": "2026-11-10T02:10:46.120000",
-    "end_time": "2026-11-10T02:10:53.557000",
+    "start_time": "2026-11-11T02:04:31.474000",
+    "end_time": "2026-11-11T02:04:38.184000",
     "environment": "main",
-    "git_rev": "a2edb6cfced39dfa9ea66468c185272d85380067",
+    "git_rev": "4a469209dde1e786e143f077a2c60afba6a3d72b",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:b0ad10ef0c0c6341e74790dcd7980dba1dd437caf6e7c81b8a225fa04efc6e75",
+    "dvc_lock_hash": "sha256:5124e718625ce525aa305631311d4d1387b404e1c3523353de05d4bd5d9b5fc4",
     "calkit_version": "0.50.7",
     "system": {
       "machine_id": "9f36db4618f640e48f14ba85b8b8ec79",
@@ -18,12 +18,12 @@
     }
   },
   "plot-weekly-dists": {
-    "start_time": "2026-11-10T02:10:53.557000",
-    "end_time": "2026-11-10T02:10:57.588000",
+    "start_time": "2026-11-11T02:04:38.184000",
+    "end_time": "2026-11-11T02:04:41.674000",
     "environment": "main",
-    "git_rev": "a2edb6cfced39dfa9ea66468c185272d85380067",
+    "git_rev": "4a469209dde1e786e143f077a2c60afba6a3d72b",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:a612a280a11dffe064c2b07d07ecf5e95c335a595e822f65faac95287fc22cf5",
+    "dvc_lock_hash": "sha256:52614a97f94b360dfc6e399a16d1de99e56e1c3367abc8816227a1fafc38d1f7",
     "calkit_version": "0.50.7",
     "system": {
       "machine_id": "9f36db4618f640e48f14ba85b8b8ec79",
@@ -36,12 +36,12 @@
     }
   },
   "plot-weekly-energy": {
-    "start_time": "2026-11-10T02:10:57.588000",
-    "end_time": "2026-11-10T02:10:59.931000",
+    "start_time": "2026-11-11T02:04:41.674000",
+    "end_time": "2026-11-11T02:04:43.356000",
     "environment": "main",
-    "git_rev": "a2edb6cfced39dfa9ea66468c185272d85380067",
+    "git_rev": "4a469209dde1e786e143f077a2c60afba6a3d72b",
     "git_dirty": false,
-    "dvc_lock_hash": "sha256:e5b21190ad8225b45c10016b723a4a684ed0c9591d2e00f45c4607b66416f80d",
+    "dvc_lock_hash": "sha256:d7d44f7a4554d56c347fb16c23eab12e2237853c4217b2f23105c192556e53a4",
     "calkit_version": "0.50.7",
     "system": {
       "machine_id": "9f36db4618f640e48f14ba85b8b8ec79",
